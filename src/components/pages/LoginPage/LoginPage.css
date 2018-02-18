@@ -1,0 +1,12 @@
+img {
+  width: auto;
+  max-height: 100%; }
+
+.login-container {
+  height: 100vh;
+  background-image: url("../../images/loginBg.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center; }
+
+/*# sourceMappingURL=LoginPage.css.map */
