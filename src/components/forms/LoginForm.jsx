@@ -51,10 +51,6 @@ class LoginForm extends Component {
 
     validate = (data) => {
         const errors = {};
-        if(!data.login)
-            errors.login = "Pole nie może być puste";
-        if(!data.password)
-            errors.password = "Pole nie może być puste";
         return errors;
     };
 

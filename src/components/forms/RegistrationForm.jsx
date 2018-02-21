@@ -27,15 +27,27 @@ class RegistrationForm extends Component {
         event.preventDefault();
         const errors = this.validate(this.state.data);
         this.setState( {errors} );
-        console.log(this.state);
-        // let url = "http://192.168.63.207:8080/user";
-        // fetch(url,{
-        //     method: 'POST',
-        //     body: JSON.stringify(this.state),
-        //     headers: new Headers({
-        //         'Content-Type': 'application/json'
-        //     })
-        // }).then(response => console.log(response.json()));
+        console.log(errors);
+        if(Object.keys(errors).length === 0) {
+            let url = "http://192.168.63.211:8080/user";
+            fetch(url,{
+                method: 'POST',
+                body: JSON.stringify({
+                    login:this.state.data.login,
+                    password:this.state.data.password,
+                    email:this.state.data.email
+                }),
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                })
+            }).then(response => console.log(response.json()));
+
+            return errors;
+        }
+        else {
+            return errors;
+
+        }
     };
 
     validate = (data)=>{
@@ -46,8 +58,12 @@ class RegistrationForm extends Component {
             errors.password = "To pole nie może być puste";
         if(data.password !== data.rePassword)
             errors.rePassword = "Hasła nie są identyczne";
-        if(!validator.isEmail(data.email))
-            errors.email = "Nie poprawny mail";
+        if(!data.email)
+            errors.email = "Pole nie moze byc puste";
+        else {
+            if (!validator.isEmail(data.email))
+                errors.email = "Nie poprawny mail";
+        }
         return errors;
 
     };
