@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
 import RegistrationForm from "../../forms/RegistrationForm";
-import Container from "../../common/Container";
+import "./RegistrationPage.css"
 
 class RegistrationPage extends Component {
 
     render() {
         return (
-            <Container>
-                <div className="registrationContainer">
-                    <RegistrationForm/>
-                </div>
-            </Container>
+            <div className="registration-container">
+                <RegistrationForm/>
+            </div>
         );
     }
 }

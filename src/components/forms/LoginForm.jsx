@@ -2,13 +2,17 @@ import React, {Component} from 'react';
 import "./LoginForm.css"
 import {Link} from "react-router-dom";
 import logo from "../images/gymStyleIcon.png"
+import Logo from "../common/Logo";
 
 class LoginForm extends Component {
 
     constructor(props){
         super(props);
         this.state={
-            disabled:"disabled"
+            data:{},
+            disabled:"disabled",
+            errors:{}
+
         };
 
 
@@ -22,41 +26,54 @@ class LoginForm extends Component {
 
     handleChange=(event)=>{
         event.preventDefault();
-        if(!this.state.hasOwnProperty("login") || !this.state.hasOwnProperty("password") || event.target.value === ""){
+        if(!this.state.data.hasOwnProperty("login") || !this.state.data.hasOwnProperty("password") || event.target.value === ""){
             this.setState({
                 disabled:"disabled",
-                [event.target.name]: event.target.value
+                data:{...this.state.data, [event.target.name]: event.target.value}
             });
         }
         else{
             this.setState({
                 disabled:"",
-                [event.target.name]: event.target.value
+                data:{...this.state.data, [event.target.name]: event.target.value}
             });
         }
 
 
     };
 
-    handleSubmit=(event)=>{
+    handleSubmit = (event)=>{
         event.preventDefault();
+        const errors = this.validate(this.state.data);
+        this.setState({ errors });
         console.log(this.state);
+    };
+
+    validate = (data) => {
+        const errors = {};
+        if(!data.login)
+            errors.login = "Pole nie może być puste";
+        if(!data.password)
+            errors.password = "Pole nie może być puste";
+        return errors;
     };
 
 
     render() {
+        const { errors } = this.state;
+
         return (
             <div className="box-form">
-                <div className="header-box">
-                    <img src={logo} alt="Logo"/>
-                </div>
+                <Logo/>
                 <div className="form-container">
                     <form className="form" onSubmit={this.handleSubmit}>
-                        <div className="login-form">
+                        <div className="inputs-container">
                             <label>Login:</label>
                             <input type="text" name="login" autoFocus="autoFocus" onChange={this.handleChange}/>
+                            {/*{errors.login && <InlineError text={errors.login}/>}*/}
                             <label>Hasło:</label>
                             <input type="password" name="password" onChange={this.handleChange} />
+                            {/*{errors.password && <InlineError text={errors.password}/>}*/}
                             <input type="submit" value="Zaloguj" disabled={this.state.disabled}/>
                         </div>
                     </form>

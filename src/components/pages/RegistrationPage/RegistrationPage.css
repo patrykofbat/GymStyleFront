@@ -1,3 +1,8 @@
-
+.registration-container {
+  height: 100vh;
+  background-image: url("../../images/loginBg.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center; }
 
 /*# sourceMappingURL=RegistrationPage.css.map */
