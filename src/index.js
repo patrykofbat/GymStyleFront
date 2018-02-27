@@ -8,8 +8,12 @@ import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from "react-router-dom";
 import rootReducer from "./rootReducer";
 import {composeWithDevTools} from "redux-devtools-extension";
+import {logger} from "redux-logger";
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+
+
+
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, logger)));
 
 
 ReactDOM.render(

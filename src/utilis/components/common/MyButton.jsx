@@ -6,17 +6,16 @@ class MyButton extends Component {
 
 
 
-    handleButton(event){
+    handleButton = (event) => {
         event.preventDefault();
         console.log(this.props.onClick);
         this.props.onClick.push("/login");
-
-    }
+    };
 
 
     render() {
         return (
-            <button className="MyButton" onClick={this.handleButton.bind(this)}>
+            <button className="MyButton" onClick={this.handleButton}>
                 {this.props.value}
             </button>
         );

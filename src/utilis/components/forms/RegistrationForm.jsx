@@ -27,20 +27,14 @@ class RegistrationForm extends Component {
         event.preventDefault();
         const errors = this.validate(this.state.data);
         this.setState( {errors} );
-        console.log(errors);
+
         if(Object.keys(errors).length === 0) {
-            let url = "http://192.168.63.211:8080/user";
-            fetch(url,{
-                method: 'POST',
-                body: JSON.stringify({
-                    login:this.state.data.login,
-                    password:this.state.data.password,
-                    email:this.state.data.email
-                }),
-                headers: new Headers({
-                    'Content-Type': 'application/json'
-                })
-            }).then(response => console.log(response.json()));
+
+            this.props.onSubmit({
+                login:this.state.data.login,
+                password:this.state.data.password,
+                email:this.state.data.email
+            });
 
             return errors;
         }
