@@ -5,6 +5,7 @@ import LoginPage from "./utilis/components/pages/LoginPage/LoginPage";
 import RegistrationPage from "./utilis/components/pages/RegistrationPage/RegistrationPage";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
+import {signUpUser} from "./utilis/actions/userActions";
 
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
             <div>
                 <Route path="/home" exact render={(props) => <StartPage {...this.props} {...props}/>}/>
                 <Route path="/login" exact component={LoginPage}/>
-                <Route path="/registration" exact component={RegistrationPage}/>
+                <Route path="/registration" exact render={(props) => <RegistrationPage {...this.props} {...props}/>}/>
             </div>
 
         );
@@ -31,12 +32,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) =>{
     return {
-        setName:(name) => {
-            dispatch({
-                type:"SIGN_UP",
-                payload: name
-            })
-        }
+        signUp: signUpUser
+
     };
 };
 

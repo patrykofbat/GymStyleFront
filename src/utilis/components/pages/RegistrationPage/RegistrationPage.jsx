@@ -5,16 +5,9 @@ import "./RegistrationPage.css"
 class RegistrationPage extends Component {
 
     handleData = (data) => {
-        let url = "http://192.168.63.211:8080/user";
-        fetch(url,{
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            })
-        }).then(response => console.log(response.json()));
+        console.log("debug");
+        this.props.signUp(data);
     };
-
 
     render() {
         return (
