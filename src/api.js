@@ -3,7 +3,7 @@ import axios from "axios"
 export default {
     user: {
         signUp: (data) => {
-            let url = "http://192.168.198.84:8080/user";
+            let url = "http://localhost:9000/user";
             axios({
                 method: 'post',
                 url,

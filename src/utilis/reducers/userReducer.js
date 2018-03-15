@@ -1,5 +1,5 @@
 export const userReducer = (state = {
-    name:"noname"
+    access:false
 }, action) => {
     let newState = {...state};
     switch (action.type) {
