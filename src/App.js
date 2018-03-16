@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { Route } from "react-router-dom";
-import StartPage from "./utilis/components/pages/StartPage/StartPage";
-import LoginPage from "./utilis/components/pages/LoginPage/LoginPage";
-import RegistrationPage from "./utilis/components/pages/RegistrationPage/RegistrationPage";
+import StartPage from "./utilis/components/pages/StartPage";
+import LoginPage from "./utilis/components/pages/LoginPage";
+import RegistrationPage from "./utilis/components/pages/RegistrationPage";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {signUpUser} from "./utilis/actions/userActions";
-import Dashboard from "./utilis/components/pages/DashboardPage/Dashboard";
+import Dashboard from "./utilis/components/pages/Dashboard";
 
 
 class App extends Component {

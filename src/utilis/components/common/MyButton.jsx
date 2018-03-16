@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import "./MyButton.css"
-import {withRouter} from "react-router-dom"
+import "../../style/components/common/MyButton.css"
 
 class MyButton extends Component {
 

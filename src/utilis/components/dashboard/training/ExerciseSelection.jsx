@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Dropdown} from "semantic-ui-react";
+import Card from "./Card";
 class ExerciseSelection extends Component {
 
     exerciseOptions = [
@@ -21,6 +22,7 @@ class ExerciseSelection extends Component {
         return (
             <div>
                 <Dropdown placeholder='Select exercise' fluid selection options={this.exerciseOptions} onChange={this.handleChange}/>
+                <Card/>
             </div>
         );
     }

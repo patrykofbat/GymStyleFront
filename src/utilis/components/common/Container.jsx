@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Container.css'
+import '../../style/components/common/Container.css'
 class Container extends Component {
 
 

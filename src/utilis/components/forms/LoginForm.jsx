@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import "./LoginForm.css"
+import "../../style/components/forms/LoginForm.css"
 import {Link} from "react-router-dom";
-import logo from "../images/gymStyleIcon.png"
 import Logo from "../common/Logo";
 
 class LoginForm extends Component {
@@ -10,8 +9,8 @@ class LoginForm extends Component {
         super(props);
         this.state={
             data:{},
-            disabled:"disabled",
-            errors:{}
+            disabled:"disabled"
+
 
         };
 
@@ -44,19 +43,12 @@ class LoginForm extends Component {
 
     handleSubmit = (event)=>{
         event.preventDefault();
-        const errors = this.validate(this.state.data);
-        this.setState({ errors });
         this.props.onSubmit(this.state.data);
     };
 
-    validate = (data) => {
-        const errors = {};
-        return errors;
-    };
 
 
     render() {
-        const { errors } = this.state;
 
         return (
             <div className="box-form">
@@ -66,10 +58,10 @@ class LoginForm extends Component {
                         <div className="inputs-container">
                             <label>Login:</label>
                             <input type="text" name="login" autoFocus="autoFocus" onChange={this.handleChange}/>
-                            {/*{errors.login && <InlineError text={errors.login}/>}*/}
+
                             <label>Hasło:</label>
                             <input type="password" name="password" onChange={this.handleChange} />
-                            {/*{errors.password && <InlineError text={errors.password}/>}*/}
+
                             <input type="submit" value="Zaloguj" disabled={this.state.disabled}/>
                         </div>
                     </form>

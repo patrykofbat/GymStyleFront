@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "../../common/Header";
-import "./StartPage.css";
+import Header from "../common/Header";
+import "../../style/components/pages/StartPage.css";
 import MyButton from "../../common/MyButton";
 
 

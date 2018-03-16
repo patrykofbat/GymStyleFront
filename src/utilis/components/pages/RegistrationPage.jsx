@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import RegistrationForm from "../../forms/RegistrationForm";
-import "./RegistrationPage.css"
+import RegistrationForm from "../forms/RegistrationForm";
+import "../../style/components/pages/RegistrationPage.css"
 
 class RegistrationPage extends Component {
 
