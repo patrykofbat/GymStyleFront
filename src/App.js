@@ -3,9 +3,6 @@ import { Route } from "react-router-dom";
 import StartPage from "./utilis/components/pages/StartPage";
 import LoginPage from "./utilis/components/pages/LoginPage";
 import RegistrationPage from "./utilis/components/pages/RegistrationPage";
-import {connect} from "react-redux";
-import {withRouter} from "react-router-dom";
-import {signUpUser} from "./utilis/actions/userActions";
 import Dashboard from "./utilis/components/pages/Dashboard";
 
 
@@ -25,20 +22,7 @@ class App extends Component {
     };
 }
 
-const mapStateToProps = (state) => {
-    return{
-        user:state.user
 
-    };
-};
-
-const mapDispatchToProps = () =>{
-    return {
-        signUp: signUpUser
-
-    };
-};
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default App;
 
 

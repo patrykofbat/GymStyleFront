@@ -6,7 +6,7 @@ class RegistrationPage extends Component {
 
     handleData = (data) => {
         console.log("debug");
-        this.props.signUp(data)();
+
     };
 
     render() {
