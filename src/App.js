@@ -9,7 +9,6 @@ import Dashboard from "./utilis/components/pages/Dashboard";
 class App extends Component {
 
     render() {
-        console.log(this.props);
         return (
             <div>
                 <Route path="/home" exact render={(props) => <StartPage {...this.props} {...props}/>}/>

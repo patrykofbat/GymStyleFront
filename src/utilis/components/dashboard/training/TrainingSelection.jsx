@@ -20,7 +20,6 @@ class TrainingSelection extends Component {
 
 
     render() {
-        console.log(this.props);
         return (
             <div>
                 <Dropdown placeholder='Select training' fluid selection options={this.trainingOptions} />

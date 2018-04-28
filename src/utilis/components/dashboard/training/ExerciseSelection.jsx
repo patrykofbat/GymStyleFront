@@ -26,7 +26,6 @@ class ExerciseSelection extends Component {
 
 
     render() {
-        console.log(this.props.items);
         return (
             <div>
                 <Dropdown placeholder='Select exercise' fluid selection options={this.exerciseOptions} onChange={this.handleChange}/>
