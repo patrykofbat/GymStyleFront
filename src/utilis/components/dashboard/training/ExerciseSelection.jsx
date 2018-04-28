@@ -19,8 +19,11 @@ class ExerciseSelection extends Component {
 
     applyStyle = (snapshot) =>({
         backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey',
-        height: "80%"
+        minHeight: "80%",
+        marginTop: "10px",
     });
+
+
 
 
 
@@ -33,8 +36,8 @@ class ExerciseSelection extends Component {
                     {(provided, snapshot)=>(
                         <div
                             ref={provided.innerRef}
-                            style={this.applyStyle(snapshot)}
                             {...provided.droppableProps}
+                            style={this.applyStyle(snapshot)}
                         >
                             {this.props.items.map(item =>(
                                 <Card id={item.id} index={item.index} content={item.content}/>

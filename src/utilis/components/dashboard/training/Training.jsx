@@ -37,7 +37,6 @@ class Training extends Component {
     };
 
     onDragEnd = (result)=>{
-        // console.log(result.destination.droppableId);
         if (!result.destination) {
             return;
         }
@@ -77,22 +76,17 @@ class Training extends Component {
         }
         else if(result.destination.droppableId === "exercise"  && result.source.droppableId === "exercise"){
             this.setState((prevState, props)=>{
-                console.log(this.state.items);
                 let picked = prevState.items.splice(result.source.index,1);
-                console.log(picked);
                 picked[0].index = result.destination.index;
                 prevState.items = this.reIndexDeleted(prevState.items, result.source.index);
                 prevState.items = this.reIndexAdded(prevState.items, picked[0]);
-                console.log(prevState.items);
                 return {...prevState};
             });
 
         }
         else if(result.destination.droppableId === "training"  && result.source.droppableId === "training"){
             this.setState((prevState, props)=>{
-                console.log(this.state.trainings);
                 let picked = prevState.trainings.splice(result.source.index,1);
-                console.log(picked);
                 picked[0].index = result.destination.index;
                 prevState.trainings = this.reIndexDeleted(prevState.trainings, result.source.index);
                 prevState.tranings = this.reIndexAdded(prevState.trainings, picked[0]);

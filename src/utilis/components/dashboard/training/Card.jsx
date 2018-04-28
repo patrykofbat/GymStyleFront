@@ -4,6 +4,11 @@ import {Draggable} from "react-beautiful-dnd";
 
 class Card extends Component{
 
+    applyStyle = (provided, snapshot) =>({
+        backgroundColor: "red",
+        ...provided.draggableProps.style
+    });
+
     render(){
         return(
             <Draggable draggableId={this.props.id} type="PERSON" index={this.props.index}>
@@ -11,9 +16,9 @@ class Card extends Component{
                     <div>
                         <div
                             ref={provided.innerRef}
-                            style={{backgroundColor: "red"}}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
+                            style={this.applyStyle(provided, snapshot)}
                         >
                             <h4>{this.props.content}</h4>
                         </div>
