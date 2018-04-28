@@ -7,16 +7,25 @@ import {DragDropContext}from "react-beautiful-dnd";
 
 class Training extends Component {
 
-
     mockUpItems = [{id:0,content:"Wyciskanie lezac",index:0, key:0},{id:1,content:"Martwy ciag",index:1, key:1},{id:2,content:"Przysiad",index:2, key:2}];
     mockUpTranings = [{id:3,content:"Cos tam",index:0, key:3}];
 
-    reindex = (list,index) => {
+    reIndexDeleted = (list,index) => {
         let reindexedList = [...list];
         for(let i = index; i < list.length; i++){
             reindexedList[i].index = reindexedList[i].index--;
         }
         return reindexedList;
+
+    };
+    reIndexAdded = (list, newItem) => {
+        let removed = list.splice(newItem.index, list.length - newItem.index);
+        list.push(newItem);
+        removed.forEach(item => {
+            item.index++;
+            list.push(item);
+        });
+        return list;
 
     };
 
@@ -29,7 +38,7 @@ class Training extends Component {
     };
 
     onDragEnd = (result)=>{
-        console.log(result.destination.droppableId);
+        // console.log(result.destination.droppableId);
         if (!result.destination) {
             return;
         }
@@ -37,15 +46,15 @@ class Training extends Component {
         if(result.destination.droppableId === "training" && result.source.droppableId !== "training") {
             this.setState((prevState, props) => {
                 let removed = prevState.items.splice(result.source.index,1);
-                console.log(removed);
-                prevState.items = this.reindex(prevState.items, result.source.index);
-                prevState.trainings.push({
+                let newItem = {
                     id: result.draggableId,
                     content: removed[0].content,
-                    index: result.source.index,
+                    index: result.destination.index,
                     key: removed[0].key
-                });
-
+                };
+                console.log(removed);
+                prevState.items = this.reIndexDeleted(prevState.items, result.source.index);
+                prevState.trainings = this.reIndexAdded(prevState.trainings, newItem);
                 return {
                     ...prevState
                 }
@@ -54,19 +63,24 @@ class Training extends Component {
         else if(result.destination.droppableId === "exercise"  && result.source.droppableId !== "exercise"){
             this.setState((prevState, props) => {
                 let removed = prevState.trainings.splice(result.source.index,1);
-                prevState.trainings = this.reindex(prevState.trainings, result.source.index);
-                prevState.items.push({
+                let newItem = {
                     id: result.draggableId,
                     content: removed[0].content,
-                    index: result.source.index,
+                    index: result.destination.index,
                     key: removed[0].key
-
-                });
-
+                };
+                prevState.trainings = this.reIndexDeleted(prevState.trainings, result.source.index);
+                prevState.items = this.reIndexAdded(prevState.items, newItem);
                 return {
                     ...prevState
                 }
             });
+        }
+        else if(result.destination.droppableId === "exercise"  && result.source.droppableId === "exercise"){
+
+        }
+        else if(result.destination.droppableId === "training"  && result.source.droppableId === "training"){
+
         }
 
 
@@ -74,7 +88,7 @@ class Training extends Component {
 
     render() {
         return (
-            <DragDropContext onDragEnd={this.onDragEnd}>
+            <DragDropContext onDragUpdate={this.onDragUpdate} onDragEnd={this.onDragEnd}>
                 <Grid style={{height: '75vh'}}>
                     <Grid.Column stretched  width={8}>
                         <Segment>
