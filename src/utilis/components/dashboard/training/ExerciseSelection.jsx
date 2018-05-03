@@ -40,7 +40,7 @@ class ExerciseSelection extends Component {
                             style={this.applyStyle(snapshot)}
                         >
                             {this.props.items.map(item =>(
-                                <Card id={item.id} index={item.index} content={item.content}/>
+                                <Card popUp={this.props.popUp} id={item.id} index={item.index} content={item.content}/>
                             ))}
 
                         </div>

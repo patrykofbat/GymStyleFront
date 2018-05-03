@@ -104,14 +104,14 @@ class Training extends Component {
                     <Grid.Column stretched  width={8}>
                         <Segment>
                             <h2>Trening</h2>
-                            <TrainingSelection items={this.state.trainings}/>
+                            <TrainingSelection popUp={this.props.popUp} items={this.state.trainings}/>
 
                         </Segment>
                     </Grid.Column>
                     <Grid.Column stretched  width={8}>
                         <Segment>
                             <h2>Cwiczenia</h2>
-                            <ExerciseSelection items={this.state.items}/>
+                            <ExerciseSelection popUp={this.props.popUp} items={this.state.items}/>
 
                         </Segment>
                     </Grid.Column>

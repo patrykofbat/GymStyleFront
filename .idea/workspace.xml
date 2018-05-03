@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dbaf124e-754e-4c35-af40-39ccdf4f6840" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilis/components/common/MainContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilis/components/common/MainContent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilis/components/dashboard/training/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilis/components/dashboard/training/Card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseSelection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseSelection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilis/components/dashboard/training/Training.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilis/components/dashboard/training/Training.jsx" afterDir="false" />
@@ -32,8 +33,8 @@
       <file leaf-file-name="MainContent.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utilis/components/common/MainContent.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+            <state relative-caret-position="391">
+              <caret line="31" column="71" lean-forward="true" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -41,18 +42,18 @@
       <file leaf-file-name="Training.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/Training.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="91" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="442">
+              <caret line="110" column="54" lean-forward="true" selection-start-line="110" selection-start-column="54" selection-end-line="110" selection-end-column="54" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <marker date="1524947775531" expanded="true" signature="4024:4691" ph="..." />
-                <marker date="1524947775531" expanded="false" signature="4054:4063" ph="..." />
-                <marker date="1524947775531" expanded="true" signature="4127:4355" ph="..." />
-                <marker date="1524947775531" expanded="true" signature="4161:4320" ph="..." />
-                <marker date="1524947775531" expanded="true" signature="4284:4310" ph="..." />
-                <marker date="1524947775531" expanded="true" signature="4410:4636" ph="..." />
-                <marker date="1524947775531" expanded="true" signature="4444:4601" ph="..." />
-                <marker date="1524947775531" expanded="true" signature="4565:4591" ph="..." />
+                <marker date="1525370421198" expanded="true" signature="4024:4741" ph="..." />
+                <marker date="1525370421198" expanded="false" signature="4054:4063" ph="..." />
+                <marker date="1525370421198" expanded="true" signature="4127:4380" ph="..." />
+                <marker date="1525370421198" expanded="true" signature="4161:4345" ph="..." />
+                <marker date="1525370421198" expanded="true" signature="4309:4335" ph="..." />
+                <marker date="1525370421198" expanded="true" signature="4435:4686" ph="..." />
+                <marker date="1525370421198" expanded="true" signature="4469:4651" ph="..." />
+                <marker date="1525370421198" expanded="true" signature="4615:4641" ph="..." />
               </folding>
             </state>
           </provider>
@@ -61,17 +62,17 @@
       <file leaf-file-name="TrainingSelection.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/TrainingSelection.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="340">
+              <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Card.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Card.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/Card.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+            <state relative-caret-position="408">
+              <caret line="27" column="73" lean-forward="true" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -79,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExerciseSelection.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExerciseSelection.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseSelection.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="289">
+              <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -152,7 +153,6 @@
         <option value="$PROJECT_DIR$/src/utilis/components/pages/DashboardPage/Dashboard.jsx" />
         <option value="$PROJECT_DIR$/src/utilis/components/dashboard/Training.jsx" />
         <option value="$PROJECT_DIR$/src/utilis/components/dashboard/TrainingMenu.jsx" />
-        <option value="$PROJECT_DIR$/src/utilis/components/common/MainContent.jsx" />
         <option value="$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseCards.jsx" />
         <option value="$PROJECT_DIR$/src/utilis/components/pages/StartPage.jsx" />
         <option value="$PROJECT_DIR$/src/utilis/components/pages/UserPage.jsx" />
@@ -163,10 +163,11 @@
         <option value="$PROJECT_DIR$/src/api.js" />
         <option value="$PROJECT_DIR$/src/utilis/components/pages/LoginPage.jsx" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/utilis/components/common/MainContent.jsx" />
         <option value="$PROJECT_DIR$/src/utilis/components/dashboard/training/Training.jsx" />
-        <option value="$PROJECT_DIR$/src/utilis/components/dashboard/training/Card.jsx" />
         <option value="$PROJECT_DIR$/src/utilis/components/dashboard/training/TrainingSelection.jsx" />
         <option value="$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseSelection.jsx" />
+        <option value="$PROJECT_DIR$/src/utilis/components/dashboard/training/Card.jsx" />
       </list>
     </option>
   </component>
@@ -442,7 +443,8 @@
       <workItem from="1524811387234" duration="48000" />
       <workItem from="1524848490989" duration="421000" />
       <workItem from="1524938972019" duration="215000" />
-      <workItem from="1524939452993" duration="8174000" />
+      <workItem from="1524939452993" duration="8252000" />
+      <workItem from="1525365041228" duration="2266000" />
     </task>
     <task id="LOCAL-00001" summary="add logo, change view of login, button disable">
       <created>1519127524508</created>
@@ -521,56 +523,43 @@
       <option name="project" value="LOCAL" />
       <updated>1524947645568</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="apply style to cards">
+      <created>1524949358063</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1524949358063</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201394000" />
+    <option name="totallyTimeSpent" value="203738000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48556876" visible="true" weight="0.1641318" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48556876" visible="true" weight="0.16369048" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.505" side_tool="true" weight="0.13903743" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32921347" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.495" visible="true" weight="0.1300813" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32921347" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.495" visible="true" weight="0.12871288" />
       <window_info id="npm" order="2" sideWeight="0.51443124" side_tool="true" weight="0.20808202" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.33820224" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33820224" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.14037433" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.14037433" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info id="npm" order="2" sideWeight="0.5079681" side_tool="true" weight="0.21625" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.495" weight="0.2014768" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49203187" visible="true" weight="0.14527287" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.14037433" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.505" side_tool="true" weight="0.13903743" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -590,9 +579,34 @@
     <MESSAGE value="reindexed function for exercises" />
     <MESSAGE value="almost dnd works little issue and need to implement for destination=source" />
     <MESSAGE value="logic of dnd done" />
-    <option name="LAST_COMMIT_MESSAGE" value="logic of dnd done" />
+    <MESSAGE value="apply style to cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="apply style to cards" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/Card.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseSelection.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-route/node_modules/object-assign/index.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-route/node_modules/object-assign/package.json" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-route/index.js" />
@@ -639,12 +653,6 @@
           <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utilis/components/images/loginBackground.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utilis/components/images/gymStyleIcon.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
@@ -693,9 +701,6 @@
           <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utilis/components/common/Logo.jsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -835,50 +840,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utilis/components/common/MainContent.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+        <state relative-caret-position="391">
+          <caret line="31" column="71" lean-forward="true" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/Training.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="442">
+          <caret line="110" column="54" lean-forward="true" selection-start-line="110" selection-start-column="54" selection-end-line="110" selection-end-column="54" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <marker date="1524947775531" expanded="true" signature="4024:4691" ph="..." />
-            <marker date="1524947775531" expanded="false" signature="4054:4063" ph="..." />
-            <marker date="1524947775531" expanded="true" signature="4127:4355" ph="..." />
-            <marker date="1524947775531" expanded="true" signature="4161:4320" ph="..." />
-            <marker date="1524947775531" expanded="true" signature="4284:4310" ph="..." />
-            <marker date="1524947775531" expanded="true" signature="4410:4636" ph="..." />
-            <marker date="1524947775531" expanded="true" signature="4444:4601" ph="..." />
-            <marker date="1524947775531" expanded="true" signature="4565:4591" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/Card.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1525370421198" expanded="true" signature="4024:4741" ph="..." />
+            <marker date="1525370421198" expanded="false" signature="4054:4063" ph="..." />
+            <marker date="1525370421198" expanded="true" signature="4127:4380" ph="..." />
+            <marker date="1525370421198" expanded="true" signature="4161:4345" ph="..." />
+            <marker date="1525370421198" expanded="true" signature="4309:4335" ph="..." />
+            <marker date="1525370421198" expanded="true" signature="4435:4686" ph="..." />
+            <marker date="1525370421198" expanded="true" signature="4469:4651" ph="..." />
+            <marker date="1525370421198" expanded="true" signature="4615:4641" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/TrainingSelection.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="340">
+          <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseSelection.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="289">
+          <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/Card.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" column="73" lean-forward="true" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

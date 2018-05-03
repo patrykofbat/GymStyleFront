@@ -3,12 +3,15 @@ import { Grid, Menu, Segment } from 'semantic-ui-react'
 import Training from "../dashboard/training/Training";
 
 export default class MainContent extends Component {
-    state = { activeItem: 'Start' }
+    state = { activeItem: 'Start',
+        popUp:false
+    };
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+    handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+    handlePopUp = () => this.setState({popUp:true});
 
     render() {
-        const { activeItem } = this.state
+        let { activeItem, popUp } = this.state;
 
         return (
             <Grid padded style={{height: '80vh'}}>
@@ -25,11 +28,12 @@ export default class MainContent extends Component {
                 <Grid.Column stretched width={12}>
                     <Segment>
                         {activeItem === "Start" && <p>{activeItem}</p>}
-                        {activeItem === "Trening" && <Training/>}
+                        {activeItem === "Trening" && <Training popUp={this.handlePopUp}/>}
                         {activeItem === "Dieta" && <p>{activeItem}</p>}
                         {activeItem === "Sylwetka" && <p>{activeItem}</p>}
                         {activeItem === "Suplementacja" && <p>{activeItem}</p>}
                     </Segment>
+                    {popUp === true &&<div style={{position:"fixed",backgroundColor:"grey"}}>PopUp</div>}
                 </Grid.Column>
             </Grid>
         )
