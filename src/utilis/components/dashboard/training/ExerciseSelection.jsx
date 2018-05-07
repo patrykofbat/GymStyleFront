@@ -18,7 +18,7 @@ class ExerciseSelection extends Component {
     };
 
     applyStyle = (snapshot) =>({
-        backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey',
+        // backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey',
         minHeight: "80%",
         marginTop: "10px",
     });

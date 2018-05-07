@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import {Draggable} from "react-beautiful-dnd";
+import InfoButton from "../../common/InfoButton";
 
 
 class Card extends Component{
 
     applyStyle = (provided, snapshot) =>({
-        backgroundColor: "red",
-        height:"2rem",
+        backgroundColor: "white",
+        border:"1px solid #ccc",
+        padding:"0.5rem",
+        height:"2.8rem",
         display:"flex",
         flexDirection:"row",
         justifyContent:"space-between",
         borderRadius: "0.4rem",
+        boxShadow: "1px 2px #F5F5F5",
         ...provided.draggableProps.style
     });
 
@@ -18,7 +22,7 @@ class Card extends Component{
         return(
             <Draggable draggableId={this.props.id} type="PERSON" index={this.props.index}>
                 {(provided, snapshot) => (
-                    <div>
+                    <div style={{marginBottom:"0.5rem", marginTop: "0.5rem"}}>
                         <div
                             ref={provided.innerRef}
                             {...provided.draggableProps}
@@ -26,7 +30,7 @@ class Card extends Component{
                             style={this.applyStyle(provided, snapshot)}
                         >
                             <h4>{this.props.content}</h4>
-                            <button style={{borderRadius: "50%"}} onClick={this.props.popUp}>?</button>
+                            <InfoButton onClick={this.props.popUp}/>
                         </div>
                         {provided.placeholder}
                     </div>
