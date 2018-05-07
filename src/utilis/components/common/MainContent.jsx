@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Menu, Segment } from 'semantic-ui-react'
 import Training from "../dashboard/training/Training";
+import PopUp from "./PopUp";
 
 export default class MainContent extends Component {
     state = { activeItem: 'Start',
@@ -9,6 +10,7 @@ export default class MainContent extends Component {
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name });
     handlePopUp = () => this.setState({popUp:true});
+    handlePopUpEsc = () => this.setState({popUp:false});
 
     render() {
         let { activeItem, popUp } = this.state;
@@ -33,7 +35,7 @@ export default class MainContent extends Component {
                         {activeItem === "Sylwetka" && <p>{activeItem}</p>}
                         {activeItem === "Suplementacja" && <p>{activeItem}</p>}
                     </Segment>
-                    {popUp === true &&<div style={{position:"fixed",backgroundColor:"grey"}}>PopUp</div>}
+                    {popUp === true && <PopUp esc={this.handlePopUpEsc} content={"PopUp"}/>}
                 </Grid.Column>
             </Grid>
         )

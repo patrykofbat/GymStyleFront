@@ -10,6 +10,7 @@ class Card extends Component{
         display:"flex",
         flexDirection:"row",
         justifyContent:"space-between",
+        borderRadius: "0.4rem",
         ...provided.draggableProps.style
     });
 
@@ -25,7 +26,7 @@ class Card extends Component{
                             style={this.applyStyle(provided, snapshot)}
                         >
                             <h4>{this.props.content}</h4>
-                            <button onClick={this.props.popUp}>X</button>
+                            <button style={{borderRadius: "50%"}} onClick={this.props.popUp}>?</button>
                         </div>
                         {provided.placeholder}
                     </div>
