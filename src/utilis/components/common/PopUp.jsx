@@ -16,7 +16,8 @@ class PopUp extends Component {
     render() {
         return (
             <div style={this.style}>
-                {this.props.content}
+                <iframe src="http://www.youtube.com/embed/VTcCb0I9xTE"
+                        width="560" height="315" frameBorder="0" allowFullScreen></iframe>
                 <button onClick={this.props.esc}>
                     x
                 </button>
