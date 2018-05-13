@@ -3,7 +3,7 @@ import { Grid, Segment } from 'semantic-ui-react'
 import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
-import axios from "axios";
+import api from "../../../../api";
 
 class Training extends Component {
 
@@ -29,37 +29,21 @@ class Training extends Component {
 
     };
 
+    applyExercises = (data) => {
+        console.log(data);
+
+    };
+
     componentDidMount() {
-        axios({
-            method: 'get',
-            url: 'http://localhost:8080/exercise',
-            data: {
-                selectedOption: this.state.selectedOption
-            }
-        }).then(
-            (response) => {
-                console.log(response);
-            });
-    }
+        api.getExercises(this.state.selectedOption, this.applyExercises);
+    };
 
     changeOption = (selectedOption) => {
-        axios({
-            method: 'get',
-            url: 'http://localhost:8080/exercise',
-            data: {
-                selectedOption
-            }
-        }
-        ).then(
-            (response) => {
-                console.log(response);
-            });
-        console.log(selectedOption);
-
+        api.getExercises(selectedOption, this.applyExercises);
         this.setState({
             selectedOption
         });
-    }
+    };
 
     constructor(props) {
         super(props);

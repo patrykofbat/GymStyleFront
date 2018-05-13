@@ -8,7 +8,7 @@ export default {
                 method: 'post',
                 url,
                 data,
-                headers: {'Content-Type': 'application/json'}
+                headers: { 'Content-Type': 'application/json' }
             }).then(response => console.log(response));
         },
         signIn: (data) => {
@@ -17,13 +17,30 @@ export default {
                 method: 'post',
                 url,
                 data,
-                headers: {'Content-Type': 'application/json'}
+                headers: { 'Content-Type': 'application/json' }
             }).then(response => console.log(response));
         }
+
+    },
+
+    getExercises: (selectedOption, applyExercises) => {
+        let url = 'http://localhost:8080/exercises'
+        var data = "none";
+        axios({
+            method: 'post',
+            url,
+            data: {
+                selectedOption
+            }
+        }).then(
+            (response) => {
+                if (response.status === 200) {
+                    applyExercises(response.data);
+                }
+
+            });
+
 
     }
 
 }
-
-
-

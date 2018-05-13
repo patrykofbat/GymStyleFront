@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Dropdown} from "semantic-ui-react";
-import {Droppable} from "react-beautiful-dnd";
+import React, { Component } from 'react';
+import { Dropdown } from "semantic-ui-react";
+import { Droppable } from "react-beautiful-dnd";
 import Card from "./Card";
 
 class ExerciseSelection extends Component {
@@ -12,10 +12,10 @@ class ExerciseSelection extends Component {
 
     ];
 
-    handleChange = (e, data)=>{
+    handleChange = (e, data) => {
         let changeOption = this.props.changeOption;
-        
-        switch(data.value){
+
+        switch (data.value) {
             case 'klata':
                 changeOption(1000);
                 break;
@@ -24,12 +24,12 @@ class ExerciseSelection extends Component {
                 break;
             case 'nogi':
                 changeOption(3000);
-                break; 
+                break;
         }
 
     };
 
-    applyStyle = (snapshot) =>({
+    applyStyle = (snapshot) => ({
         // backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey',
         minHeight: "80%",
         marginTop: "10px",
@@ -43,16 +43,16 @@ class ExerciseSelection extends Component {
     render() {
         return (
             <div>
-                <Dropdown placeholder='Select exercise' fluid selection options={this.exerciseOptions} onChange={this.handleChange}/>
+                <Dropdown placeholder='Select exercise' fluid selection options={this.exerciseOptions} onChange={this.handleChange} />
                 <Droppable droppableId="exercise">
-                    {(provided, snapshot)=>(
+                    {(provided, snapshot) => (
                         <div
                             ref={provided.innerRef}
                             {...provided.droppableProps}
                             style={this.applyStyle(snapshot)}
                         >
-                            {this.props.items.map(item =>(
-                                <Card popUp={this.props.popUp} id={item.id} index={item.index} content={item.content}/>
+                            {this.props.items.map(item => (
+                                <Card popUp={this.props.popUp} id={item.id} index={item.index} content={item.content} />
                             ))}
 
                         </div>
