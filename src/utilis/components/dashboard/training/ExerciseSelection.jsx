@@ -13,7 +13,19 @@ class ExerciseSelection extends Component {
     ];
 
     handleChange = (e, data)=>{
-        console.log(data);
+        let changeOption = this.props.changeOption;
+        
+        switch(data.value){
+            case 'klata':
+                changeOption(1000);
+                break;
+            case 'plecy':
+                changeOption(2000);
+                break;
+            case 'nogi':
+                changeOption(3000);
+                break; 
+        }
 
     };
 
