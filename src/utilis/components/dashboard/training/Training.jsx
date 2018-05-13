@@ -30,7 +30,25 @@ class Training extends Component {
     };
 
     applyExercises = (data) => {
-        console.log(data);
+        
+        let items = data.map((obj, index, data)=>{
+            return{
+                id: obj.id,
+                content: obj.title,
+                index,
+                link:obj.link,
+                img:obj.img,
+                description:obj.description
+            }
+
+        });
+        console.log(items);
+
+        this.setState({
+            items
+        });
+            
+
 
     };
 
@@ -48,7 +66,7 @@ class Training extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: this.mockUpItems,
+            items:[],
             trainings: this.mockUpTranings,
             selectedOption: 1000
         };
