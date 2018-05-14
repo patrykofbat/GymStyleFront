@@ -32,9 +32,10 @@ class ExerciseSelection extends Component {
     };
 
     applyStyle = (snapshot) => ({
-        // backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey',
+        backgroundColor: snapshot.isDraggingOver ? 'grey' : 'white',
+        height:"100%",
         marginTop: "10px",
-        overflow:"scroll",
+        overflowY: "auto",
         overflowX: "hidden"
 
 
@@ -49,8 +50,8 @@ class ExerciseSelection extends Component {
         return (
             <div style = {{display: 'flex', flexDirection: 'column'}}>
                 <div>
-                    <h2>Cwiczenia</h2>
-                    <Dropdown placeholder='Select exercise' fluid selection options={this.exerciseOptions} onChange={this.handleChange} />
+                    <h2 style={{userSelect: "none"}}>Cwiczenia</h2>
+                    <Dropdown placeholder='Select exercise' style={{userSelect: "none"}} fluid selection options={this.exerciseOptions} onChange={this.handleChange} />
                 </div>
                 <Droppable droppableId="exercise">
                     {(provided, snapshot) => (

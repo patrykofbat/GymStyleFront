@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Dropdown } from 'semantic-ui-react';
+import { Grid, Segment} from 'semantic-ui-react';
 import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
@@ -7,8 +7,8 @@ import api from "../../../../api";
 
 class Training extends Component {
 
-    mockUpItems = [{ id: 0, content: "Wyciskanie lezac", index: 0, key: 0 }, { id: 1, content: "Martwy ciag", index: 1, key: 1 }, { id: 2, content: "Przysiad", index: 2, key: 2 }];
-    mockUpTranings = [{ id: 3, content: "Cos tam", index: 0, key: 3 }];
+
+    // mockUpTranings = [{ id: 3, content: "Cos tam", index: 0, key: 3 }];
 
     reIndexDeleted = (list, index) => {
         let reindexedList = [...list];
@@ -52,10 +52,7 @@ class Training extends Component {
 
     };
 
-    componentDidMount() {
-        api.getExercises(this.state.selectedOption, this.applyExercises);
-    };
-
+    
     changeOption = (selectedOption) => {
         api.getExercises(selectedOption, this.applyExercises);
         this.setState({
@@ -67,7 +64,7 @@ class Training extends Component {
         super(props);
         this.state = {
             items: [],
-            trainings: this.mockUpTranings,
+            trainings: [],
             selectedOption: 0
         };
     };
@@ -138,8 +135,7 @@ class Training extends Component {
             <DragDropContext onDragUpdate={this.onDragUpdate} onDragEnd={this.onDragEnd}>
                 <Grid style={{ height: '75vh', display: 'flex', flexDirection: 'row' }}>
                     <Grid.Column stretched style = {{display: 'flex', flexDirection: 'row', height: "100%"}} width={8}>
-                        <Segment>
-                            <h2>Trening</h2>
+                        <Segment style = {{display: 'flex', flexDirection: 'column'}}>
                             <TrainingSelection popUp={this.props.popUp} items={this.state.trainings} />
                         </Segment>
                     </Grid.Column>

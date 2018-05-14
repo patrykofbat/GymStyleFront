@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {Dropdown} from "semantic-ui-react";
+import React, { Component } from 'react';
+import { Dropdown } from "semantic-ui-react";
 import Card from "./Card";
-import {Droppable} from "react-beautiful-dnd";
+import { Droppable } from "react-beautiful-dnd";
 
 class TrainingSelection extends Component {
 
@@ -13,27 +13,34 @@ class TrainingSelection extends Component {
 
     ];
 
-    applyStyle = (snapshot) =>({
-            // backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey',
-            minHeight: "80%",
-            marginTop: "10px",
+    applyStyle = (snapshot) => ({
+        backgroundColor: snapshot.isDraggingOver ? 'grey' : 'white',
+        boxSizing: "border-box",
+        marginTop: "10px",
+        minHeight: "150px",
+        overflowY: "auto",
+        overflowX: "hidden"
 
-        });
+    });
 
 
     render() {
         return (
-            <div>
-                <Dropdown placeholder='Select training' fluid selection options={this.trainingOptions} />
-                <Droppable droppableId="training">
-                    {(provided, snapshot)=>(
+            <div style = {{display: 'flex', flexDirection: 'column'}}>
+                <div>
+                    <h2 style={{userSelect: "none"}}>Trening</h2>
+                    <Dropdown placeholder='Select training' style={{userSelect: "none"}} fluid selection options={this.trainingOptions} />
+                </div>
+
+                <Droppable style={{flex: 1}} droppableId="training">
+                    {(provided, snapshot) => (
                         <div
                             ref={provided.innerRef}
                             {...provided.droppableProps}
                             style={this.applyStyle(snapshot)}
                         >
-                            {this.props.items.map(item =>(
-                                <Card popUp={this.props.popUp} id={item.id} index={item.index} content={item.content}/>
+                            {this.props.items.map(item => (
+                                <Card popUp={this.props.popUp} id={item.id} index={item.index} content={item.content} />
                             ))}
                             {provided.placeholder}
 

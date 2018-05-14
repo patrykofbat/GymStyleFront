@@ -15,6 +15,7 @@ class Card extends Component{
         justifyContent:"space-between",
         borderRadius: "0.4rem",
         boxShadow: "1px 2px #F5F5F5",
+        userSelect: "none",
         ...provided.draggableProps.style
     });
 
