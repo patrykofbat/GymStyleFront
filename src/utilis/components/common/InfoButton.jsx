@@ -11,9 +11,11 @@ const style={
 
 };
 
+
 const InfoButton = (props) => {
+    let popUp = () =>{props.onClick(props.link)};
     return(
-        <button style={style} onClick={props.onClick}>
+        <button style={style} onClick={popUp}>
             ?
         </button>
     );

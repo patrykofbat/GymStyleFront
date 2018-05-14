@@ -5,15 +5,16 @@ import PopUp from "./PopUp";
 
 export default class MainContent extends Component {
     state = { activeItem: 'Start',
-        popUp:false
+        popUp:false,
+        link:""
     };
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-    handlePopUp = () => this.setState({popUp:true});
+    handlePopUp = (link) => this.setState({popUp:true,link});
     handlePopUpEsc = () => this.setState({popUp:false});
 
     render() {
-        let { activeItem, popUp } = this.state;
+        let { activeItem, popUp, link} = this.state;
 
         return (
             <Grid padded style={{height: '80vh'}}>
@@ -35,7 +36,7 @@ export default class MainContent extends Component {
                         {activeItem === "Sylwetka" && <p>{activeItem}</p>}
                         {activeItem === "Suplementacja" && <p>{activeItem}</p>}
                     </Segment>
-                    {popUp === true && <PopUp esc={this.handlePopUpEsc} content={"PopUp"}/>}
+                    {popUp === true && <PopUp link={link} esc={this.handlePopUpEsc} content={"PopUp"}/>}
                 </Grid.Column>
             </Grid>
         )

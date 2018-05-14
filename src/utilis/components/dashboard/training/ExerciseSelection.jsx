@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Dropdown } from "semantic-ui-react";
 import { Droppable } from "react-beautiful-dnd";
 import Card from "./Card";
+import { Grid, Segment, Dropdown } from 'semantic-ui-react';
+
+
 
 class ExerciseSelection extends Component {
 
@@ -31,8 +33,11 @@ class ExerciseSelection extends Component {
 
     applyStyle = (snapshot) => ({
         // backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey',
-        minHeight: "80%",
         marginTop: "10px",
+        overflow:"scroll",
+        overflowX: "hidden"
+
+
     });
 
 
@@ -42,8 +47,11 @@ class ExerciseSelection extends Component {
 
     render() {
         return (
-            <div>
-                <Dropdown placeholder='Select exercise' fluid selection options={this.exerciseOptions} onChange={this.handleChange} />
+            <div style = {{display: 'flex', flexDirection: 'column'}}>
+                <div>
+                    <h2>Cwiczenia</h2>
+                    <Dropdown placeholder='Select exercise' fluid selection options={this.exerciseOptions} onChange={this.handleChange} />
+                </div>
                 <Droppable droppableId="exercise">
                     {(provided, snapshot) => (
                         <div
@@ -51,9 +59,11 @@ class ExerciseSelection extends Component {
                             {...provided.droppableProps}
                             style={this.applyStyle(snapshot)}
                         >
+
                             {this.props.items.map(item => (
-                                <Card popUp={this.props.popUp} id={item.id} index={item.index} content={item.content} />
+                                <Card popUp={this.props.popUp} id={item.id} index={item.index} content={item.content} link={item.link} />
                             ))}
+
 
                         </div>
                     )}

@@ -8,8 +8,8 @@ class Card extends Component{
     applyStyle = (provided, snapshot) =>({
         backgroundColor: "white",
         border:"1px solid #ccc",
-        padding:"0.5rem",
-        height:"2.8rem",
+        padding:"0.2rem",
+        height:"3.2rem",
         display:"flex",
         flexDirection:"row",
         justifyContent:"space-between",
@@ -29,8 +29,8 @@ class Card extends Component{
                             {...provided.dragHandleProps}
                             style={this.applyStyle(provided, snapshot)}
                         >
-                            <h4>{this.props.content}</h4>
-                            <InfoButton onClick={this.props.popUp}/>
+                            <span>{this.props.content}</span>
+                            <InfoButton link={this.props.link} onClick={this.props.popUp}/>
                         </div>
                         {provided.placeholder}
                     </div>

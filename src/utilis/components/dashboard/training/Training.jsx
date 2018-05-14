@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Segment } from 'semantic-ui-react'
+import { Grid, Segment, Dropdown } from 'semantic-ui-react';
 import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
@@ -30,15 +30,15 @@ class Training extends Component {
     };
 
     applyExercises = (data) => {
-        
-        let items = data.map((obj, index, data)=>{
-            return{
+
+        let items = data.map((obj, index, data) => {
+            return {
                 id: obj.id,
                 content: obj.title,
                 index,
-                link:obj.link,
-                img:obj.img,
-                description:obj.description
+                link: obj.link,
+                img: obj.img,
+                description: obj.description
             }
 
         });
@@ -47,7 +47,7 @@ class Training extends Component {
         this.setState({
             items
         });
-            
+
 
 
     };
@@ -66,9 +66,9 @@ class Training extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items:[],
+            items: [],
             trainings: this.mockUpTranings,
-            selectedOption: 1000
+            selectedOption: 0
         };
     };
 
@@ -136,19 +136,16 @@ class Training extends Component {
     render() {
         return (
             <DragDropContext onDragUpdate={this.onDragUpdate} onDragEnd={this.onDragEnd}>
-                <Grid style={{ height: '75vh' }}>
-                    <Grid.Column stretched width={8}>
+                <Grid style={{ height: '75vh', display: 'flex', flexDirection: 'row' }}>
+                    <Grid.Column stretched style = {{display: 'flex', flexDirection: 'row', height: "100%"}} width={8}>
                         <Segment>
                             <h2>Trening</h2>
                             <TrainingSelection popUp={this.props.popUp} items={this.state.trainings} />
-
                         </Segment>
                     </Grid.Column>
-                    <Grid.Column stretched width={8}>
-                        <Segment>
-                            <h2>Cwiczenia</h2>
+                    <Grid.Column stretched style = {{display: 'flex', flexDirection: 'row', height: "100%"}} width={8} >
+                        <Segment style = {{display: 'flex', flexDirection: 'column'}}>
                             <ExerciseSelection changeOption={this.changeOption} popUp={this.props.popUp} items={this.state.items} />
-
                         </Segment>
                     </Grid.Column>
                 </Grid>
