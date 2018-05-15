@@ -37,10 +37,10 @@ class TrainingSelection extends Component {
                         <div
                             ref={provided.innerRef}
                             {...provided.droppableProps}
-                            style={this.applyStyle(snapshot)}
-                        >
+                            style={this.applyStyle(snapshot)}>
+                            
                             {this.props.items.map(item => (
-                                <Card popUp={this.props.popUp} id={item.id} index={item.index} content={item.content} />
+                                <Card link={item.link} popUp={this.props.popUp} id={item.id} index={item.index} content={item.content} />
                             ))}
                             {provided.placeholder}
 

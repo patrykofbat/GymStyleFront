@@ -33,7 +33,8 @@ class ExerciseSelection extends Component {
 
     applyStyle = (snapshot) => ({
         backgroundColor: snapshot.isDraggingOver ? 'grey' : 'white',
-        height:"100%",
+        minHeight: "150px",
+        boxSizing: "border-box",
         marginTop: "10px",
         overflowY: "auto",
         overflowX: "hidden"
@@ -53,19 +54,17 @@ class ExerciseSelection extends Component {
                     <h2 style={{userSelect: "none"}}>Cwiczenia</h2>
                     <Dropdown placeholder='Select exercise' style={{userSelect: "none"}} fluid selection options={this.exerciseOptions} onChange={this.handleChange} />
                 </div>
-                <Droppable droppableId="exercise">
+                <Droppable style={{flex: 1}} droppableId="exercise">
                     {(provided, snapshot) => (
                         <div
                             ref={provided.innerRef}
                             {...provided.droppableProps}
-                            style={this.applyStyle(snapshot)}
-                        >
+                            style={this.applyStyle(snapshot)}>
 
                             {this.props.items.map(item => (
                                 <Card popUp={this.props.popUp} id={item.id} index={item.index} content={item.content} link={item.link} />
                             ))}
-
-
+                            {provided.placeholder}
                         </div>
                     )}
 

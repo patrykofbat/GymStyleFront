@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Segment} from 'semantic-ui-react';
+import { Grid, Segment } from 'semantic-ui-react';
 import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
@@ -52,7 +52,7 @@ class Training extends Component {
 
     };
 
-    
+
     changeOption = (selectedOption) => {
         api.getExercises(selectedOption, this.applyExercises);
         this.setState({
@@ -70,9 +70,11 @@ class Training extends Component {
     };
 
     onDragEnd = (result) => {
+        let prevState = this.state;
         if (!result.destination) {
             return;
         }
+
 
         if (result.destination.droppableId === "training" && result.source.droppableId !== "training") {
             this.setState((prevState, props) => {
@@ -81,9 +83,11 @@ class Training extends Component {
                     id: result.draggableId,
                     content: removed[0].content,
                     index: result.destination.index,
-                    key: removed[0].key
+                    key: removed[0].key,
+                    link: removed[0].link,
+                    img: removed[0].img,
+                    description: removed[0].description
                 };
-                console.log(removed);
                 prevState.items = this.reIndexDeleted(prevState.items, result.source.index);
                 prevState.trainings = this.reIndexAdded(prevState.trainings, newItem);
                 return {
@@ -98,7 +102,10 @@ class Training extends Component {
                     id: result.draggableId,
                     content: removed[0].content,
                     index: result.destination.index,
-                    key: removed[0].key
+                    key: removed[0].key,
+                    link: removed[0].link,
+                    img: removed[0].img,
+                    description: removed[0].description
                 };
                 prevState.trainings = this.reIndexDeleted(prevState.trainings, result.source.index);
                 prevState.items = this.reIndexAdded(prevState.items, newItem);
@@ -132,16 +139,24 @@ class Training extends Component {
 
     render() {
         return (
-            <DragDropContext onDragUpdate={this.onDragUpdate} onDragEnd={this.onDragEnd}>
+            <DragDropContext onDragUpdate={this.onDragUpdate}
+                onDragEnd={this.onDragEnd}>
                 <Grid style={{ height: '75vh', display: 'flex', flexDirection: 'row' }}>
-                    <Grid.Column stretched style = {{display: 'flex', flexDirection: 'row', height: "100%"}} width={8}>
-                        <Segment style = {{display: 'flex', flexDirection: 'column'}}>
-                            <TrainingSelection popUp={this.props.popUp} items={this.state.trainings} />
+                    <Grid.Column stretched
+                        style={{ display: 'flex', flexDirection: 'row', height: "100%" }}
+                        width={8}>
+                        <Segment style={{ display: 'flex', flexDirection: 'column' }}>
+                            <TrainingSelection popUp={this.props.popUp}
+                                items={this.state.trainings} />
                         </Segment>
                     </Grid.Column>
-                    <Grid.Column stretched style = {{display: 'flex', flexDirection: 'row', height: "100%"}} width={8} >
-                        <Segment style = {{display: 'flex', flexDirection: 'column'}}>
-                            <ExerciseSelection changeOption={this.changeOption} popUp={this.props.popUp} items={this.state.items} />
+                    <Grid.Column stretched
+                        style={{ display: 'flex', flexDirection: 'row', height: "100%" }}
+                        width={8} >
+                        <Segment style={{ display: 'flex', flexDirection: 'column' }}>
+                            <ExerciseSelection changeOption={this.changeOption}
+                                popUp={this.props.popUp}
+                                items={this.state.items} />
                         </Segment>
                     </Grid.Column>
                 </Grid>

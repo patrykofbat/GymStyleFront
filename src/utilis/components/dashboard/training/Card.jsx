@@ -28,10 +28,11 @@ class Card extends Component{
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
-                            style={this.applyStyle(provided, snapshot)}
-                        >
+                            style={this.applyStyle(provided, snapshot)}>
+
                             <span>{this.props.content}</span>
                             <InfoButton link={this.props.link} onClick={this.props.popUp}/>
+                            
                         </div>
                         {provided.placeholder}
                     </div>
