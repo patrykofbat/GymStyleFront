@@ -70,7 +70,7 @@ class Training extends Component {
     };
 
     onDragEnd = (result) => {
-        let prevState = this.state;
+        
         if (!result.destination) {
             return;
         }

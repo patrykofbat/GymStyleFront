@@ -23,16 +23,16 @@ class Card extends Component{
         return(
             <Draggable draggableId={this.props.id} type="PERSON" index={this.props.index}>
                 {(provided, snapshot) => (
-                    <div style={{marginBottom:"0.5rem", marginTop: "0.5rem"}}>
+                    <div style={{margin:"0.6rem"}}>
                         <div
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                             style={this.applyStyle(provided, snapshot)}>
 
-                            <span>{this.props.content}</span>
-                            <InfoButton link={this.props.link} onClick={this.props.popUp}/>
-                            
+                            <span style={{fontSize:"0.85em"}}>{this.props.content}</span>
+                            <InfoButton title={this.props.content} link={this.props.link} onClick={this.props.popUp}/>
+
                         </div>
                         {provided.placeholder}
                     </div>

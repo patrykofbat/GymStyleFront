@@ -13,7 +13,7 @@ const style={
 
 
 const InfoButton = (props) => {
-    let popUp = () =>{props.onClick(props.link)};
+    let popUp = () =>{props.onClick(props.link, props.title)};
     return(
         <button style={style} onClick={popUp}>
             ?
