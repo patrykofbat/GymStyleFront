@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from "../common/Header";
-import "../../style/components/pages/StartPage.css";
-import MyButton from "../common/MyButton";
+import Header from "../components/common/Header";
+import "../style/pages/StartPage.css";
+import MyButton from "../components/common/MyButton";
 
 
 const Start = (props) =>(

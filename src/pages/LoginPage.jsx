@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import "../../style/components/pages/LoginPage.css"
-import LoginForm from "../forms/LoginForm";
-import api from "../../../api";
+import "../style/pages/LoginPage.css"
+import LoginForm from "../components/forms/LoginForm";
+import api from "../api";
 
 
 

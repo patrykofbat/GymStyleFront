@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,uBAAuB;EACrB,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,8CAA8C;EAChE,eAAe,EAAE,KAAK;EACtB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM",
+"sources": ["RegistrationPage.sass"],
+"names": [],
+"file": "RegistrationPage.css"
+}

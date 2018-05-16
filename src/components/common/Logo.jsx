@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../images/gymStyleIcon.png"
+import logo from "../../assets/images/gymStyleIcon.png"
 
 const Logo = (props) => {
     return(
