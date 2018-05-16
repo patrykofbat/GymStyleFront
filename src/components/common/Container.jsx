@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import '../../utilis/style/components/common/Container.css'
 class Container extends Component {
 
 

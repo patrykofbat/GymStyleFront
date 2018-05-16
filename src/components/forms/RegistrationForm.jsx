@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import '../../style/components/forms/RegistrationForm.css';
 import Logo from "../common/Logo";
 import InlineError from "../messages/InlineError";
 import validator from "validator";

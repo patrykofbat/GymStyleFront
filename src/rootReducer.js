@@ -1,7 +1,8 @@
-
 const initialState = {
-    items:[]
-}
+  items: []
+};
 
-const rootReducer  = (state = initialState, action) => state;
+const rootReducer = (state = initialState, action) => {
+  return state;
+};
 export default rootReducer;

@@ -25,7 +25,6 @@ export default {
 
     getExercises: (selectedOption, applyExercises) => {
         let url = 'http://localhost:8080/exercises'
-        var data = "none";
         axios({
             method: 'post',
             url,

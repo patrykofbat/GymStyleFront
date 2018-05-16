@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import "../style/pages/LoginPage.css"
 import LoginForm from "../components/forms/LoginForm";
 import api from "../api";
 

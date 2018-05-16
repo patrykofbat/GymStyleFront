@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "../../style/components/forms/LoginForm.css"
 import { Link } from "react-router-dom";
 import Logo from "../common/Logo";
 

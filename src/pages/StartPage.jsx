@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from "../components/common/Header";
-import "../style/pages/StartPage.css";
 import MyButton from "../components/common/MyButton";
 
 

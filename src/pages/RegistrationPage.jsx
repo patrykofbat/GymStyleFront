@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import RegistrationForm from "../components/forms/RegistrationForm";
-import "../style/pages/RegistrationPage.css"
 import api from "../api";
 
 class RegistrationPage extends Component {

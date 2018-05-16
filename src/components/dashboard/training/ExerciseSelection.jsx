@@ -23,6 +23,9 @@ class ExerciseSelection extends Component {
       case "nogi":
         changeOption(3000);
         break;
+      default:
+        changeOption(0);
+        break;
     }
   };
 
