@@ -4,6 +4,7 @@ import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
 import api from "../../../api";
+import { connect } from "react-redux";
 
 class Training extends Component {
   // mockUpTranings = [{ id: 3, content: "Cos tam", index: 0, key: 3 }];
@@ -24,6 +25,10 @@ class Training extends Component {
     });
     return list;
   };
+
+  componentWillUnmount() {
+    this.props.addExercise(this.state.items, this.state.trainings);
+  }
 
   applyExercises = data => {
     let items = data.map((obj, index, data) => {
@@ -52,9 +57,10 @@ class Training extends Component {
 
   constructor(props) {
     super(props);
+    console.log(props.items);
     this.state = {
-      items: [],
-      trainings: [],
+      items: props.items,
+      trainings: props.tranings,
       selectedOption: 0
     };
   }
@@ -181,4 +187,20 @@ class Training extends Component {
   }
 }
 
-export default Training;
+const mapStateToProps = state => ({
+  items: state.items,
+  tranings: state.tranings
+});
+
+const mapDispatchToProps = dispatch => ({
+  addExercise: (items, tranings) =>
+    dispatch({
+      type: "ADD_EXERCISES",
+      payload: {
+        items,
+        tranings
+      }
+    })
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Training);
