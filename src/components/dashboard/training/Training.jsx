@@ -90,6 +90,7 @@ class Training extends Component {
           result.source.index
         );
         prevState.trainings = this.reIndexAdded(prevState.trainings, newItem);
+        this.props.addExercise(prevState.items, prevState.trainings);
         return {
           ...prevState
         };
@@ -114,6 +115,7 @@ class Training extends Component {
           result.source.index
         );
         prevState.items = this.reIndexAdded(prevState.items, newItem);
+        this.props.addExercise(prevState.items, prevState.trainings);
         return {
           ...prevState
         };
@@ -130,6 +132,7 @@ class Training extends Component {
           result.source.index
         );
         prevState.items = this.reIndexAdded(prevState.items, picked[0]);
+        this.props.addExercise(prevState.items, prevState.trainings);
         return { ...prevState };
       });
     } else if (
@@ -144,6 +147,7 @@ class Training extends Component {
           result.source.index
         );
         prevState.tranings = this.reIndexAdded(prevState.trainings, picked[0]);
+        this.props.addExercise(prevState.items, prevState.trainings);
         return { ...prevState };
       });
     }
