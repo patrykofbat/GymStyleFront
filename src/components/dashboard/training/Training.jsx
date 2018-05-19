@@ -27,7 +27,7 @@ class Training extends Component {
   };
 
   componentWillUnmount() {
-    this.props.addExercise(this.state.items, this.state.trainings);
+    this.props.addExercise(this.state.items, this.state.trainings, this.state.requestedId);
   }
 
   applyExercises = data => {
@@ -48,10 +48,10 @@ class Training extends Component {
     });
   };
 
-  changeOption = selectedOption => {
-    api.getExercises(selectedOption, this.applyExercises);
+  changeOption = requestedId => {
+    api.getExercises(requestedId, this.applyExercises);
     this.setState({
-      selectedOption
+      requestedId
     });
   };
 
@@ -61,7 +61,7 @@ class Training extends Component {
     this.state = {
       items: props.items,
       trainings: props.tranings,
-      selectedOption: 0
+      requestedId: 0
     };
   }
 
@@ -90,7 +90,7 @@ class Training extends Component {
           result.source.index
         );
         prevState.trainings = this.reIndexAdded(prevState.trainings, newItem);
-        this.props.addExercise(prevState.items, prevState.trainings);
+        this.props.addExercise(prevState.items, prevState.trainings, prevState.requestedId);
         return {
           ...prevState
         };
@@ -115,7 +115,7 @@ class Training extends Component {
           result.source.index
         );
         prevState.items = this.reIndexAdded(prevState.items, newItem);
-        this.props.addExercise(prevState.items, prevState.trainings);
+        this.props.addExercise(prevState.items, prevState.trainings, prevState.requestedId);
         return {
           ...prevState
         };
@@ -132,7 +132,7 @@ class Training extends Component {
           result.source.index
         );
         prevState.items = this.reIndexAdded(prevState.items, picked[0]);
-        this.props.addExercise(prevState.items, prevState.trainings);
+        this.props.addExercise(prevState.items, prevState.trainings, prevState.requestedId);
         return { ...prevState };
       });
     } else if (
@@ -147,7 +147,7 @@ class Training extends Component {
           result.source.index
         );
         prevState.tranings = this.reIndexAdded(prevState.trainings, picked[0]);
-        this.props.addExercise(prevState.items, prevState.trainings);
+        this.props.addExercise(prevState.items, prevState.trainings, prevState.requestedId);
         return { ...prevState };
       });
     }
@@ -197,12 +197,13 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addExercise: (items, tranings) =>
+  addExercise: (items, tranings, requestedId) =>
     dispatch({
       type: "ADD_EXERCISES",
       payload: {
         items,
-        tranings
+        tranings,
+        requestedId
       }
     })
 });

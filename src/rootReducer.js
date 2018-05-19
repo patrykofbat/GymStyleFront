@@ -1,17 +1,33 @@
+import { selectById } from "./utilis/arrayExtractor";
+
 const initialState = {
   items: [],
-  tranings: []
+  tranings: [],
+  requestedId: 0
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_EXERCISES":
-      console.log(state);
+      let newItems = [...state.items];
+      let newTranings = [...state.tranings];
+
+      newItems.push(...action.payload.items);
+      newTranings.push(...action.payload.tranings);
+
+      console.log(newItems);
+      let selectedById = selectById(action.payload.items, action.payload.requestedId);
+      console.log(selectedById);
       return {
         ...state,
-        items: [...action.payload.items],
-        tranings: [...action.payload.tranings]
+        items: newItems,
+        tranings: newTranings,
+        requestedId: action.payload.requestedId
       };
+    case "REQUEST_ITEMS":
+
+      return null;
+      
     default:
       return state;
     }
