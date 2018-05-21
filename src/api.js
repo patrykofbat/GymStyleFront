@@ -34,7 +34,7 @@ export default {
         }).then(
             (response) => {
                 if (response.status === 200) {
-                    applyExercises(response.data);
+                    applyExercises(selectedOption, response.data);
                 }
 
             });

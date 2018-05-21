@@ -1,4 +1,4 @@
-export const request = (items, tranings) => {
+export const requestExercises = (items, tranings) => {
   console.log("siemka");
   return {
     type: "REQUEST_ITEMS",
