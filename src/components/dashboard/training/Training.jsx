@@ -5,6 +5,7 @@ import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
 import api from "../../../api";
 import { connect } from "react-redux";
+import { request, addExercise } from "../../../actions/dashboardActions"
 
 class Training extends Component {
   // mockUpTranings = [{ id: 3, content: "Cos tam", index: 0, key: 3 }];
@@ -27,7 +28,9 @@ class Training extends Component {
   };
 
   componentWillUnmount() {
-    this.props.addExercise(this.state.items, this.state.trainings, this.state.requestedId);
+    console.log(this.props.request);
+    this.props.request("elo", "siemka");
+    // this.props.addExercise(this.state.items, this.state.trainings, this.state.requestedId);
   }
 
   applyExercises = data => {
@@ -57,7 +60,6 @@ class Training extends Component {
 
   constructor(props) {
     super(props);
-    console.log(props.items);
     this.state = {
       items: props.items,
       trainings: props.tranings,
@@ -196,16 +198,10 @@ const mapStateToProps = state => ({
   tranings: state.tranings
 });
 
-const mapDispatchToProps = dispatch => ({
-  addExercise: (items, tranings, requestedId) =>
-    dispatch({
-      type: "ADD_EXERCISES",
-      payload: {
-        items,
-        tranings,
-        requestedId
-      }
-    })
+const mapDispatchToProps = (dispatch) => ({
+  addExercise: (items, tranings, requestedId) => dispatch(addExercise(items, tranings, requestedId)),
+  request: (items, tranings) => dispatch(request(items, tranings))
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Training);

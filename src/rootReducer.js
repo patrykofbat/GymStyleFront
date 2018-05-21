@@ -25,8 +25,9 @@ const rootReducer = (state = initialState, action) => {
         requestedId: action.payload.requestedId
       };
     case "REQUEST_ITEMS":
+      console.log(action.payload);
 
-      return null;
+      return state;
       
     default:
       return state;
