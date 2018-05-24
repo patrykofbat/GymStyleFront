@@ -1,10 +1,9 @@
-export const requestExercises = (items, tranings) => {
-  console.log("siemka");
+
+export const saveItems = (items) => {
   return {
-    type: "REQUEST_ITEMS",
+    type: "SAVE_ITEMS",
     payload: {
-      items,
-      tranings
+      items
     }
   };
 };

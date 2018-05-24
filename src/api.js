@@ -23,7 +23,7 @@ export default {
 
     },
 
-    getExercises: (selectedOption, applyExercises) => {
+    getExercises: (selectedOption, saveItems) => {
         let url = 'http://localhost:8080/exercises'
         axios({
             method: 'post',
@@ -34,7 +34,7 @@ export default {
         }).then(
             (response) => {
                 if (response.status === 200) {
-                    applyExercises(selectedOption, response.data);
+                    saveItems(response.data);
                 }
 
             });

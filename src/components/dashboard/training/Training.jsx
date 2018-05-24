@@ -5,10 +5,7 @@ import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
 import api from "../../../api";
 import { connect } from "react-redux";
-import {
-  requestExercises,
-  addExercise
-} from "../../../actions/dashboardActions";
+import {saveItems, addExercise} from "../../../actions/dashboardActions";
 import { selectById } from "../../../utilis/arrayExtractor";
 
 class Training extends Component {
@@ -17,10 +14,8 @@ class Training extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      database: [],
-      items: props.items,
-      trainings: props.tranings,
-      requestedIds: []
+      items: props.currentItems,
+      trainings: props.currentTraningExercises
     };
   }
 
@@ -43,12 +38,10 @@ class Training extends Component {
   };
 
   componentWillUnmount() {
-    console.log(this.props.request);
-    this.props.request("elo", "siemka");
     // this.props.addExercise(this.state.items, this.state.trainings, this.state.requestedId);
   }
 
-  applyExercises = (currentId,data) => {
+  applyExercises = (currentId, data) => {
     let items = data.map((obj, index, data) => {
       return {
         id: obj.id,
@@ -62,33 +55,15 @@ class Training extends Component {
     console.log(items);
     console.log(this.state);
 
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       items: prevState.items.concat(items),
       requestedIds: prevState.requestedIds.concat([currentId])
     }));
-
-   
-    
   };
 
   changeOption = currentId => {
-    if (this.state.requestedIds.includes(currentId)) {
-      let items = selectById(this.state.items).map((obj, index, data) => {
-        return {
-          id: obj.id,
-          content: obj.title,
-          index,
-          link: obj.link,
-          img: obj.img,
-          description: obj.description
-        };
-      });
-      this.setState(prevState => ({
-        items
-      }));
-    } else {
-      api.getExercises(currentId, this.applyExercises);
-    }
+    api.getExercises(currentId, this.props.saveItems)
+    
   };
 
   onDragEnd = result => {
@@ -234,14 +209,14 @@ class Training extends Component {
 }
 
 const mapStateToProps = state => ({
-  items: state.items,
-  tranings: state.tranings
+  currentItems: state.currentItems,
+  currentTraningExercises: state.currentTraningExercises
 });
 
 const mapDispatchToProps = dispatch => ({
   addExercise: (items, tranings, requestedId) =>
     dispatch(addExercise(items, tranings, requestedId)),
-  request: (items, tranings) => dispatch(requestExercises(items, tranings))
+  saveItems: (items) => dispatch(saveItems(items))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Training);

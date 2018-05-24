@@ -1,9 +1,10 @@
 import { selectById } from "./utilis/arrayExtractor";
 
 const initialState = {
-  items: [],
-  tranings: [],
-  requestedId: 0
+  allItems: [],
+  currentItems:[],
+  currentTraningExercises: [],
+  requestedIds: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -24,7 +25,7 @@ const rootReducer = (state = initialState, action) => {
         tranings: newTranings,
         requestedId: action.payload.requestedId
       };
-    case "REQUEST_ITEMS":
+    case "SAVE_ITEMS":
       console.log(action.payload);
 
       return state;
