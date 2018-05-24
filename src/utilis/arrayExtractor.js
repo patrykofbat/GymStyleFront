@@ -2,7 +2,7 @@
 const selectById = (array, id) => {
     let selectedById = [];
     array.forEach(element => {
-        if(Math.floor(element.id/id ) === 1)
+        if(element.id - id  >= 0 && element.id - id < 1000)
             selectedById.push(element)
     });
 

@@ -1,5 +1,4 @@
-
-export const saveItems = (items) => {
+export const saveItems = items => {
   return {
     type: "SAVE_ITEMS",
     payload: {
@@ -15,6 +14,15 @@ export const addExercise = (items, tranings, requestedId) => {
       items,
       tranings,
       requestedId
+    }
+  };
+};
+
+export const applyExercises = currentId => {
+  return {
+    type: "APPLY_EXERCISES",
+    payload: {
+      currentId
     }
   };
 };

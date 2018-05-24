@@ -5,7 +5,7 @@ import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
 import api from "../../../api";
 import { connect } from "react-redux";
-import {saveItems, addExercise} from "../../../actions/dashboardActions";
+import {saveItems, addExercise, applyExercises} from "../../../actions/dashboardActions";
 import { selectById } from "../../../utilis/arrayExtractor";
 
 class Training extends Component {
@@ -15,6 +15,7 @@ class Training extends Component {
     super(props);
     this.state = {
       items: props.currentItems,
+      allItems:props.allItems,
       trainings: props.currentTraningExercises
     };
   }
@@ -41,28 +42,27 @@ class Training extends Component {
     // this.props.addExercise(this.state.items, this.state.trainings, this.state.requestedId);
   }
 
-  applyExercises = (currentId, data) => {
-    let items = data.map((obj, index, data) => {
-      return {
-        id: obj.id,
-        content: obj.title,
-        index,
-        link: obj.link,
-        img: obj.img,
-        description: obj.description
-      };
+  applyExercises = (items) => {
+    this.props.saveItems(items);
+    console.log(this.props.allItems);
+    this.setState({
+      items,
+      allItems: this.props.allItems
     });
-    console.log(items);
-    console.log(this.state);
-
-    this.setState(prevState => ({
-      items: prevState.items.concat(items),
-      requestedIds: prevState.requestedIds.concat([currentId])
-    }));
   };
 
   changeOption = currentId => {
-    api.getExercises(currentId, this.props.saveItems)
+    console.log("selected: ");
+    console.log(selectById(this.state.allItems, currentId))
+    if(this.props.requestedIds.includes(currentId)){
+      this.setState({
+        items:selectById(this.state.allItems, currentId)
+      });
+    }
+    else{
+      api.getExercises(currentId, this.applyExercises);
+    }
+
     
   };
 
@@ -210,13 +210,16 @@ class Training extends Component {
 
 const mapStateToProps = state => ({
   currentItems: state.currentItems,
-  currentTraningExercises: state.currentTraningExercises
+  allItems: state.allItems,
+  currentTraningExercises: state.currentTraningExercises,
+  requestedIds: state.requestedIds
 });
 
 const mapDispatchToProps = dispatch => ({
   addExercise: (items, tranings, requestedId) =>
     dispatch(addExercise(items, tranings, requestedId)),
-  saveItems: (items) => dispatch(saveItems(items))
+  saveItems: (items) => dispatch(saveItems(items)),
+  applyExercises: (currentId) => dispatch(applyExercises(currentId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Training);

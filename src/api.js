@@ -23,7 +23,7 @@ export default {
 
     },
 
-    getExercises: (selectedOption, saveItems) => {
+    getExercises: (selectedOption, applyExercises) => {
         let url = 'http://localhost:8080/exercises'
         axios({
             method: 'post',
@@ -34,7 +34,16 @@ export default {
         }).then(
             (response) => {
                 if (response.status === 200) {
-                    saveItems(response.data);
+                    applyExercises(response.data.map((obj, index, data)=> {
+                        return {
+                            id: obj.id,
+                            content: obj.title,
+                            index,
+                            link: obj.link,
+                            img: obj.img,
+                            description: obj.description
+                          };
+                    }));
                 }
 
             });
