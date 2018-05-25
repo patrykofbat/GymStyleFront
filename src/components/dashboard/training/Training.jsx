@@ -52,8 +52,6 @@ class Training extends Component {
   };
 
   changeOption = currentId => {
-    console.log("selected: ");
-    console.log(selectById(this.state.allItems, currentId))
     if(this.props.requestedIds.includes(currentId)){
       this.setState({
         items:selectById(this.state.allItems, currentId)
@@ -91,11 +89,6 @@ class Training extends Component {
           result.source.index
         );
         prevState.trainings = this.reIndexAdded(prevState.trainings, newItem);
-        this.props.addExercise(
-          prevState.items,
-          prevState.trainings,
-          prevState.requestedId
-        );
         return {
           ...prevState
         };
@@ -120,11 +113,6 @@ class Training extends Component {
           result.source.index
         );
         prevState.items = this.reIndexAdded(prevState.items, newItem);
-        this.props.addExercise(
-          prevState.items,
-          prevState.trainings,
-          prevState.requestedId
-        );
         return {
           ...prevState
         };
@@ -141,11 +129,6 @@ class Training extends Component {
           result.source.index
         );
         prevState.items = this.reIndexAdded(prevState.items, picked[0]);
-        this.props.addExercise(
-          prevState.items,
-          prevState.trainings,
-          prevState.requestedId
-        );
         return { ...prevState };
       });
     } else if (
@@ -160,11 +143,6 @@ class Training extends Component {
           result.source.index
         );
         prevState.tranings = this.reIndexAdded(prevState.trainings, picked[0]);
-        this.props.addExercise(
-          prevState.items,
-          prevState.trainings,
-          prevState.requestedId
-        );
         return { ...prevState };
       });
     }
