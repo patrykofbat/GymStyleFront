@@ -1,6 +1,6 @@
 export const saveTraining = (items, currentTraningExercises) => {
   return {
-    type: "SAVE_ITEMS",
+    type: "SAVE_TRAINING",
     payload: {
       items,
       currentTraningExercises
@@ -27,3 +27,14 @@ export const applyExercises = currentId => {
     }
   };
 };
+
+
+export const saveItems = (items) => {
+  return {
+    type: "SAVE_ITEMS",
+    payload: {
+      items
+    }
+  };
+};
+
