@@ -1,8 +1,9 @@
-export const saveItems = items => {
+export const saveTraining = (items, currentTraningExercises) => {
   return {
     type: "SAVE_ITEMS",
     payload: {
-      items
+      items,
+      currentTraningExercises
     }
   };
 };

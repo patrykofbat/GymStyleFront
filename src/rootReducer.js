@@ -11,17 +11,10 @@ const rootReducer = (state = initialState, action) => {
   switch (action.type) {
       
     case "SAVE_ITEMS":
-      let newItems = state.allItems.concat(action.payload.items);
-      let newRequestedIds = [...state.requestedIds];
-      newRequestedIds.push(action.payload.items[0].id)
-    
-      console.log(state.requestedIds);
-
       return {
         ...state,
-        allItems: newItems,
         currentItems: action.payload.items,
-        requestedIds: newRequestedIds
+        currentTraningExercises: action.payload.currentTraningExercises
       };
 
     case "APPLY_EXERCISES":
