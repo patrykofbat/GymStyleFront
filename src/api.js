@@ -3,7 +3,7 @@ import axios from "axios"
 export default {
     user: {
         signUp: (data) => {
-            let url = "http://localhost:9000/user";
+            let url = "http://192.168.1.3:80/GymStyleBackend/index.php";
             axios({
                 method: 'post',
                 url,
@@ -12,7 +12,7 @@ export default {
             }).then(response => console.log(response));
         },
         signIn: (data) => {
-            let url = "http://192.168.63.211:8080/login";
+            let url = "http://192.168.1.3:80/login";
             axios({
                 method: 'post',
                 url,
@@ -24,7 +24,7 @@ export default {
     },
 
     getExercises: (selectedOption, applyExercises) => {
-        let url = 'http://localhost:8080/exercises'
+        let url = 'http://192.168.1.6:80//GymStyleBackend/index.php'
         axios({
             method: 'post',
             url,
@@ -34,6 +34,7 @@ export default {
         }).then(
             (response) => {
                 if (response.status === 200) {
+                    console.log(response);
                     applyExercises(response.data.map((obj, index, data)=> {
                         return {
                             id: obj.id,
