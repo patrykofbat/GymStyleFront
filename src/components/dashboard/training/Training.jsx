@@ -9,7 +9,6 @@ import {saveTraining, saveItems, addExercise, applyExercises} from "../../../act
 import { selectById } from "../../../utilis/arrayExtractor";
 
 class Training extends Component {
-  // mockUpTranings = [{ id: 3, content: "Cos tam", index: 0, key: 3 }];
 
   constructor(props) {
     super(props);
@@ -121,9 +120,10 @@ class Training extends Component {
             width={8}
           >
             <Segment style={{ display: "flex", flexDirection: "column" }}>
-              <TrainingSelection
+              <ExerciseSelection
+                changeOption={this.changeOption}
                 popUp={this.props.popUp}
-                items={this.state.trainings}
+                items={this.state.items}
               />
             </Segment>
           </Grid.Column>
@@ -133,10 +133,9 @@ class Training extends Component {
             width={8}
           >
             <Segment style={{ display: "flex", flexDirection: "column" }}>
-              <ExerciseSelection
-                changeOption={this.changeOption}
+            <TrainingSelection
                 popUp={this.props.popUp}
-                items={this.state.items}
+                items={this.state.trainings}
               />
             </Segment>
           </Grid.Column>

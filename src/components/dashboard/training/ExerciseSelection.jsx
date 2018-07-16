@@ -65,6 +65,7 @@ class ExerciseSelection extends Component {
                   index={item.index}
                   content={item.content}
                   link={item.link}
+                  key={item.id}
                 />
               ))}
               {provided.placeholder}

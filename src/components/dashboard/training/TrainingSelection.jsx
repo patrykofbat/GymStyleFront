@@ -47,6 +47,7 @@ class TrainingSelection extends Component {
                   id={item.id}
                   index={item.index}
                   content={item.content}
+                  key={item.id}
                 />
               ))}
               {provided.placeholder}
