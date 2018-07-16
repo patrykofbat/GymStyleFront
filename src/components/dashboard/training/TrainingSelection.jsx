@@ -19,6 +19,12 @@ class TrainingSelection extends Component {
     overflowX: "hidden"
   });
 
+  addTraining = (event, data)=>{
+    if(data.value === "new"){
+      // add new item
+    }
+  }
+
   render() {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -30,6 +36,8 @@ class TrainingSelection extends Component {
             fluid
             selection
             options={this.trainingOptions}
+            value={"nogi"}
+            onChange={this.addTraining}
           />
         </div>
 
