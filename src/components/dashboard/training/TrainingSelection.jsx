@@ -29,7 +29,10 @@ class TrainingSelection extends Component {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div>
-          <h2 style={{ userSelect: "none" }}>Trening</h2>
+          <div style={{display:"flex", flexDirection: "row", justifyContent:"space-between"}}>
+            <h2 style={{ userSelect: "none" }}>Trening</h2>
+            <button>-></button>
+          </div>
           <Dropdown
             placeholder="Select training"
             style={{ userSelect: "none" }}
