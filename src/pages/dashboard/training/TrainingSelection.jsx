@@ -5,9 +5,6 @@ import { Droppable } from "react-beautiful-dnd";
 
 class TrainingSelection extends Component {
   trainingOptions = [
-    { key: "nogi1", value: "nogi", text: "nogi" },
-    { key: "klata1", value: "klata", text: "klata" },
-    { key: "plecy1", value: "plecy", text: "plecy" },
     { key: "new", value: "new", text: "Utwórz nowy plan" }
   ];
 
@@ -39,7 +36,6 @@ class TrainingSelection extends Component {
             fluid
             selection
             options={this.trainingOptions}
-            value={"nogi"}
             onChange={this.addTraining}
           />
         </div>

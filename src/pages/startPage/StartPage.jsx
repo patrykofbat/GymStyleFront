@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "../components/common/Header";
-import MyButton from "../components/common/MyButton";
+import Header from "../../components/common/Header";
+import MyButton from "../../components/common/MyButton";
 
 
 const Start = (props) =>(

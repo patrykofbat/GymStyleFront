@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import RegistrationForm from "../components/forms/RegistrationForm";
-import api from "../api";
+import RegistrationForm from "./RegistrationForm";
+import api from "../../api";
 
 class RegistrationPage extends Component {
 

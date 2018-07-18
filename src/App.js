@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import StartPage from "./pages/StartPage";
-import LoginPage from "./pages/LoginPage";
-import RegistrationPage from "./pages/RegistrationPage";
-import Dashboard from "./pages/Dashboard";
+import StartPage from "./pages/startPage/StartPage";
+import LoginPage from "./pages/loginPage/LoginPage";
+import RegistrationPage from "./pages/registrationPage/RegistrationPage";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 class App extends Component {
   render() {

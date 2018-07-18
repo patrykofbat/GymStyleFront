@@ -5,8 +5,9 @@ import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
 import api from "../../../api";
 import { connect } from "react-redux";
-import {saveTraining, saveItems, addExercise, applyExercises} from "../../../actions/dashboardActions";
+import {saveTraining, saveItems, addExercise, applyExercises} from "./trainingActions";
 import { selectById } from "../../../utilis/arrayExtractor";
+
 
 class Training extends Component {
 

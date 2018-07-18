@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Menu, Segment } from 'semantic-ui-react'
-import Training from "../dashboard/training/Training";
+import Training from "../../pages/dashboard/training/Training";
 import PopUp from "./PopUp";
 
 export default class MainContent extends Component {

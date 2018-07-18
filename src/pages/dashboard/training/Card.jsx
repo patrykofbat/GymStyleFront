@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Draggable } from "react-beautiful-dnd";
-import InfoButton from "../../common/InfoButton";
+import InfoButton from "../../../components/common/InfoButton";
 
 class Card extends Component {
   applyStyle = (provided, snapshot) => ({

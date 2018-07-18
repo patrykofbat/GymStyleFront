@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import LoginForm from "../components/forms/LoginForm";
-import api from "../api";
+import LoginForm from "./LoginForm";
+import api from "../../api";
 
 
 

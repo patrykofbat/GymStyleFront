@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Logo from "../common/Logo";
-import InlineError from "../messages/InlineError";
+import Logo from "../../components/common/Logo";
+import InlineError from "../../components/messages/InlineError";
 import validator from "validator";
 
 class RegistrationForm extends Component {
