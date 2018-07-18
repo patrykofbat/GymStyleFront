@@ -50,6 +50,17 @@ export default {
             });
 
 
+    },
+
+    getExercisesTest: (selectedOption) => {
+        let url = 'http://192.168.1.6:80/GymStyleBackend/index.php'
+        return axios({
+            method: 'post',
+            url,
+            data: {
+                selectedOption
+            }
+        })
     }
 
 }

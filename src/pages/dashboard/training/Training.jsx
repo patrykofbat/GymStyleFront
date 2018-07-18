@@ -5,7 +5,7 @@ import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
 import api from "../../../api";
 import { connect } from "react-redux";
-import {saveTraining, saveItems, addExercise, applyExercises} from "./trainingActions";
+import {saveTraining, saveItems, addExercise, applyExercises, loadExercises} from "./trainingActions";
 import { selectById } from "../../../utilis/arrayExtractor";
 
 
@@ -39,6 +39,7 @@ class Training extends Component {
   };
 
   componentWillUnmount() {
+    this.props.loadExercises(1000);
     this.props.saveTraining(this.state.items, this.state.trainings);
   }
 
@@ -158,7 +159,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addExercise(items, tranings, requestedId)),
   saveTraining: (items, currentTraningExercises) => dispatch(saveTraining(items, currentTraningExercises)),
   saveItems: (items) => dispatch(saveItems(items)),
-  applyExercises: (currentId) => dispatch(applyExercises(currentId))
+  applyExercises: (currentId) => dispatch(applyExercises(currentId)),
+  loadExercises: () => dispatch(loadExercises())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Training);

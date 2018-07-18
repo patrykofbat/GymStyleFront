@@ -10,8 +10,7 @@ const initialState = {
 
 
 const trainingReducer = (state = initialState, action) => {
-    switch (action.type) {
-        
+    switch (action.type) { 
       case "SAVE_TRAINING":
         return {
           ...state,
@@ -38,9 +37,18 @@ const trainingReducer = (state = initialState, action) => {
           ...state,
           currentItems: selectById(state.allItems, action.payload.currentId)
         };
+
+        case "LOAD_ITEMS":
+            console.log(action.payload)
+            return{
+                ...state
+            }
+
         
       default:
         return state;
       }
   };
+
+
   export default trainingReducer;

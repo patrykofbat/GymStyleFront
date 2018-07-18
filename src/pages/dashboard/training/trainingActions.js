@@ -1,3 +1,6 @@
+import api from "../../../api";
+
+
 export const saveTraining = (items, currentTraningExercises) => {
   return {
     type: "SAVE_TRAINING",
@@ -37,4 +40,31 @@ export const saveItems = (items) => {
     }
   };
 };
+
+export const loader = (items) => {
+  return {
+    type: "LOAD_ITEMS",
+    payload : {
+      items
+    }
+  }
+}
+
+
+export const loadExercises = (id) =>{
+
+  return (dispatch) => {
+    return api.getExercisesTest(id).then((response) => {
+    if (response.status === 200) {
+      console.log(response.data);
+      dispatch(loader(response.data));
+  }
+
+  })
+}
+}
+
+
+
+
 
