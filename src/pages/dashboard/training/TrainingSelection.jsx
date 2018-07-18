@@ -2,11 +2,16 @@ import React, { Component } from "react";
 import { Dropdown } from "semantic-ui-react";
 import Card from "./Card";
 import { Droppable } from "react-beautiful-dnd";
+import InputPopUp from "../../../components/common/InputPopUp";
 
 class TrainingSelection extends Component {
   trainingOptions = [
     { key: "new", value: "new", text: "Utwórz nowy plan" }
   ];
+
+  state = {
+    popUp: false
+  }
 
   applyStyle = snapshot => ({
     boxSizing: "border-box",
@@ -18,7 +23,7 @@ class TrainingSelection extends Component {
 
   addTraining = (event, data)=>{
     if(data.value === "new"){
-      // add new item
+      this.setState({popUp:true});
     }
   }
 
@@ -39,6 +44,7 @@ class TrainingSelection extends Component {
             onChange={this.addTraining}
           />
         </div>
+        {this.state.popUp && InputPopUp()}
 
         <Droppable style={{ flex: 1 }} droppableId="training">
           {(provided, snapshot) => (
