@@ -3,9 +3,8 @@ import { Grid, Segment } from "semantic-ui-react";
 import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
-import api from "../../../api";
 import { connect } from "react-redux";
-import { saveTraining, saveItems, addExercise, applyExercises, loadExercises } from "./trainingActions";
+import { saveTraining, saveItems, addExercise, loadExercises } from "./trainingActions";
 import { selectById } from "../../../utilis/arrayExtractor";
 
 
@@ -41,6 +40,9 @@ class Training extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.currentItems !== this.props.currentItems)
       this.setState({ items: this.props.currentItems });
+    if (prevProps.allItems !== this.props.allItems) {
+      this.setState({ allItems: this.props.allItems });
+    }
 
   }
 
@@ -48,14 +50,6 @@ class Training extends Component {
     this.props.saveTraining(this.state.items, this.state.trainings);
   }
 
-  applyExercises = (items) => {
-    this.props.saveItems(items);
-    console.log(this.props.allItems);
-    this.setState({
-      items,
-      allItems: this.props.allItems
-    });
-  };
 
   changeTable = (source, destination, result) => {
     let removed = source.splice(result.source.index, 1);
@@ -131,6 +125,7 @@ class Training extends Component {
                 changeOption={this.changeOption}
                 popUp={this.props.popUp}
                 items={this.state.items}
+                lastRequestedId={this.props.requestedIds}
               />
             </Segment>
           </Grid.Column>
@@ -156,7 +151,8 @@ const mapStateToProps = state => ({
   currentItems: state.currentItems,
   allItems: state.allItems,
   currentTraningExercises: state.currentTraningExercises,
-  requestedIds: state.requestedIds
+  requestedIds: state.requestedIds,
+  lastRequestedId: state.lastRequestedId
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -164,7 +160,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addExercise(items, tranings, requestedId)),
   saveTraining: (items, currentTraningExercises) => dispatch(saveTraining(items, currentTraningExercises)),
   saveItems: (items) => dispatch(saveItems(items)),
-  applyExercises: (currentId) => dispatch(applyExercises(currentId)),
   loadExercises: (currentId) => dispatch(loadExercises(currentId))
 });
 

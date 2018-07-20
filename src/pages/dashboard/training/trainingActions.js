@@ -53,7 +53,7 @@ export const loader = (items) => {
 
 export const loadExercises = (id) => {
   return (dispatch) => {
-    return api.getExercisesTest(id).then((response) => {
+    return api.training.getExercises(id).then((response) => {
       if (response.status === 200) {
         console.log("load");
         let items = response.data.map((obj, index, data) => {

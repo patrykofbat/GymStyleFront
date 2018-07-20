@@ -1,11 +1,13 @@
 import { selectById } from "../../../utilis/arrayExtractor";
+import _ from "lodash";
 
 
 const initialState = {
   allItems: [],
   currentItems: [],
   currentTraningExercises: [],
-  requestedIds: []
+  requestedIds: [],
+  lastRequestedId: 0
 };
 
 
@@ -19,29 +21,29 @@ const trainingReducer = (state = initialState, action) => {
       };
 
     case "SAVE_ITEMS":
-      let newItems = state.allItems.concat(action.payload.items);
-      let newRequestedIds = [...state.requestedIds];
-      newRequestedIds.push(action.payload.items[0].id)
-
-      console.log(state.requestedIds);
 
       return {
         ...state,
         allItems: newItems,
-        currentItems: action.payload.items,
-        requestedIds: newRequestedIds
+        currentItems: action.payload.items
       };
 
-    case "APPLY_EXERCISES":
-      return {
-        ...state,
-        currentItems: selectById(state.allItems, action.payload.currentId)
-      };
 
     case "LOAD_ITEMS":
+      let newRequestedIds = [...state.requestedIds];
+      let newItems = [...state.allItems];
+
+      if (_.indexOf(newRequestedIds, action.payload.items[0].id) === -1) {
+        newItems = newItems.concat(action.payload.items);
+        newRequestedIds.push(action.payload.items[0].id)
+      }
+
       return {
         ...state,
-        currentItems: action.payload.items
+        currentItems: action.payload.items,
+        requestedIds: newRequestedIds,
+        lastRequestedId: action.payload.items[0].id,
+        allItems: newItems
       }
 
 

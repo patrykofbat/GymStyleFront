@@ -23,44 +23,18 @@ export default {
 
     },
 
-    getExercises: (selectedOption, applyExercises) => {
-        let url = 'http://192.168.1.6:80/GymStyleBackend/index.php';
-        axios({
-            method: 'post',
-            url,
-            data: {
-                selectedOption
-            }
-        }).then(
-            (response) => {
-                if (response.status === 200) {
-                    console.log(response);
-                    applyExercises(response.data.map((obj, index, data)=> {
-                        return {
-                            id: obj.id,
-                            content: obj.title,
-                            index,
-                            link: obj.link,
-                            img: obj.img,
-                            description: obj.description
-                          };
-                    }));
+    training: {
+        getExercises: (selectedOption) => {
+            let url = 'http://192.168.1.6:80/GymStyleBackend/index.php';
+            return axios({
+                method: 'post',
+                url,
+                data: {
+                    selectedOption
                 }
-
             });
+        }
 
-
-    },
-
-    getExercisesTest: (selectedOption) => {
-        let url = 'http://192.168.1.6:80/GymStyleBackend/index.php';
-        return axios({
-            method: 'post',
-            url,
-            data: {
-                selectedOption
-            }
-        });
     }
 
 };

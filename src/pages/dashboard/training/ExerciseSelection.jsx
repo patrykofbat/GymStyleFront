@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import { Droppable } from "react-beautiful-dnd";
 import Card from "./Card";
 import { Dropdown } from "semantic-ui-react";
+import _ from "lodash";
 
 class ExerciseSelection extends Component {
   exerciseOptions = [
-    { key: "nogi", value: "nogi", text: "nogi" },
-    { key: "klata", value: "klata", text: "klata" },
-    { key: "plecy", value: "plecy", text: "plecy" }
+    { key: "nogi", value: "nogi", text: "nogi", id: 3000 },
+    { key: "klata", value: "klata", text: "klata", id: 1000 },
+    { key: "plecy", value: "plecy", text: "plecy", id: 2000 }
   ];
 
+
   handleChange = (e, data) => {
+
     let changeOption = this.props.changeOption;
 
     switch (data.value) {
