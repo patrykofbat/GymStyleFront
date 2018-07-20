@@ -24,6 +24,11 @@ class TrainingSelection extends Component {
       this.setState({ popUp: true });
     }
   }
+  closePopUp = () => {
+    this.setState({
+      popUp: false
+    });
+  }
 
   render() {
     return (
@@ -42,7 +47,7 @@ class TrainingSelection extends Component {
             onChange={this.addTraining}
           />
         </div>
-        {this.state.popUp && InputPopUp()}
+        {this.state.popUp && <InputPopUp text={"Nazwa treningu: "} closePopUp={this.closePopUp} />}
 
         <Droppable style={{ flex: 1 }} droppableId="training">
           {(provided, snapshot) => (

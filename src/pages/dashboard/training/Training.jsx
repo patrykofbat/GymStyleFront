@@ -40,9 +40,9 @@ class Training extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.currentItems !== this.props.currentItems)
       this.setState({ items: this.props.currentItems });
-    if (prevProps.allItems !== this.props.allItems) {
+    if (prevProps.allItems !== this.props.allItems)
       this.setState({ allItems: this.props.allItems });
-    }
+
 
   }
 
