@@ -5,12 +5,10 @@ import { Droppable } from "react-beautiful-dnd";
 import InputPopUp from "../../../components/common/InputPopUp";
 
 class TrainingSelection extends Component {
-  trainingOptions = [
-    { key: "new", value: "new", text: "Utwórz nowy plan" }
-  ];
 
   state = {
-    popUp: false
+    popUp: false,
+    trainingOptions: [{ key: "new", value: "new", text: "Utwórz nowy plan" }]
   }
 
   applyStyle = snapshot => ({
@@ -21,9 +19,9 @@ class TrainingSelection extends Component {
     overflowX: "hidden"
   });
 
-  addTraining = (event, data)=>{
-    if(data.value === "new"){
-      this.setState({popUp:true});
+  addTraining = (event, data) => {
+    if (data.value === "new") {
+      this.setState({ popUp: true });
     }
   }
 
@@ -31,7 +29,7 @@ class TrainingSelection extends Component {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div>
-          <div style={{display:"flex", flexDirection: "row", justifyContent:"space-between"}}>
+          <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
             <h2 style={{ userSelect: "none" }}>Trening</h2>
             <button>-></button>
           </div>
@@ -40,7 +38,7 @@ class TrainingSelection extends Component {
             style={{ userSelect: "none" }}
             fluid
             selection
-            options={this.trainingOptions}
+            options={this.state.trainingOptions}
             onChange={this.addTraining}
           />
         </div>

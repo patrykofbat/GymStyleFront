@@ -5,7 +5,7 @@ import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
 import api from "../../../api";
 import { connect } from "react-redux";
-import {saveTraining, saveItems, addExercise, applyExercises, loadExercises} from "./trainingActions";
+import { saveTraining, saveItems, addExercise, applyExercises, loadExercises } from "./trainingActions";
 import { selectById } from "../../../utilis/arrayExtractor";
 
 
@@ -15,7 +15,7 @@ class Training extends Component {
     super(props);
     this.state = {
       items: props.currentItems,
-      allItems:props.allItems,
+      allItems: props.allItems,
       trainings: props.currentTraningExercises
     };
   }
@@ -38,8 +38,13 @@ class Training extends Component {
     return list;
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.currentItems !== this.props.currentItems)
+      this.setState({ items: this.props.currentItems });
+
+  }
+
   componentWillUnmount() {
-    this.props.loadExercises(1000);
     this.props.saveTraining(this.state.items, this.state.trainings);
   }
 
@@ -52,7 +57,7 @@ class Training extends Component {
     });
   };
 
-  changeTable = (source, destination, result) =>{
+  changeTable = (source, destination, result) => {
     let removed = source.splice(result.source.index, 1);
     let newItem = {
       id: result.draggableId,
@@ -72,16 +77,16 @@ class Training extends Component {
   }
 
   changeOption = currentId => {
-    if(this.props.requestedIds.includes(currentId)){
+    if (this.props.requestedIds.includes(currentId)) {
       this.setState({
-        items:selectById(this.state.allItems, currentId)
+        items: selectById(this.state.allItems, currentId)
       });
     }
-    else{
-      api.getExercises(currentId, this.applyExercises);
+    else {
+      this.props.loadExercises(currentId);
     }
 
-    
+
   };
 
   onDragEnd = result => {
@@ -89,24 +94,24 @@ class Training extends Component {
       return;
     }
 
-    if(result.destination.droppableId !== result.source.droppableId){
+    if (result.destination.droppableId !== result.source.droppableId) {
       this.setState((prevState) => {
-        if(result.destination.droppableId === "training")
+        if (result.destination.droppableId === "training")
           this.changeTable(prevState.items, prevState.trainings, result);
         else
           this.changeTable(prevState.trainings, prevState.items, result);
-        return {...prevState};
+        return { ...prevState };
       });
     }
-    else{
-      this.setState((prevState) =>{
-        if(result.destination.droppableId === "exercise")
+    else {
+      this.setState((prevState) => {
+        if (result.destination.droppableId === "exercise")
           this.changeTable(prevState.items, prevState.items, result);
         else
           this.changeTable(prevState.trainings, prevState.trainings, result);
       });
     }
-  
+
   };
 
   render() {
@@ -135,7 +140,7 @@ class Training extends Component {
             width={8}
           >
             <Segment style={{ display: "flex", flexDirection: "column" }}>
-            <TrainingSelection
+              <TrainingSelection
                 popUp={this.props.popUp}
                 items={this.state.trainings}
               />
@@ -160,7 +165,7 @@ const mapDispatchToProps = dispatch => ({
   saveTraining: (items, currentTraningExercises) => dispatch(saveTraining(items, currentTraningExercises)),
   saveItems: (items) => dispatch(saveItems(items)),
   applyExercises: (currentId) => dispatch(applyExercises(currentId)),
-  loadExercises: () => dispatch(loadExercises())
+  loadExercises: (currentId) => dispatch(loadExercises(currentId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Training);

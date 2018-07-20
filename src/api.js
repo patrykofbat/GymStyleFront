@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from "axios";
 
 export default {
     user: {
@@ -24,7 +24,7 @@ export default {
     },
 
     getExercises: (selectedOption, applyExercises) => {
-        let url = 'http://192.168.1.6:80/GymStyleBackend/index.php'
+        let url = 'http://192.168.1.6:80/GymStyleBackend/index.php';
         axios({
             method: 'post',
             url,
@@ -53,14 +53,14 @@ export default {
     },
 
     getExercisesTest: (selectedOption) => {
-        let url = 'http://192.168.1.6:80/GymStyleBackend/index.php'
+        let url = 'http://192.168.1.6:80/GymStyleBackend/index.php';
         return axios({
             method: 'post',
             url,
             data: {
                 selectedOption
             }
-        })
+        });
     }
 
-}
+};

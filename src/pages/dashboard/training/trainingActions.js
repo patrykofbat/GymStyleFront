@@ -44,24 +44,32 @@ export const saveItems = (items) => {
 export const loader = (items) => {
   return {
     type: "LOAD_ITEMS",
-    payload : {
+    payload: {
       items
     }
   }
 }
 
 
-export const loadExercises = (id) =>{
-
+export const loadExercises = (id) => {
   return (dispatch) => {
     return api.getExercisesTest(id).then((response) => {
-    if (response.status === 200) {
-      console.log(response.data);
-      dispatch(loader(response.data));
+      if (response.status === 200) {
+        console.log("load");
+        let items = response.data.map((obj, index, data) => {
+          return {
+            id: obj.id,
+            content: obj.title,
+            index,
+            link: obj.link,
+            img: obj.img,
+            description: obj.description
+          }
+        });
+        dispatch(loader(items));
+      }
+    })
   }
-
-  })
-}
 }
 
 
