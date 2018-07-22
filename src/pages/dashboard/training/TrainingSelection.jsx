@@ -30,6 +30,10 @@ class TrainingSelection extends Component {
     });
   }
 
+  handleSubmit = (e, data) => {
+    console.log(data);
+  }
+
   render() {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -47,7 +51,7 @@ class TrainingSelection extends Component {
             onChange={this.addTraining}
           />
         </div>
-        {this.state.popUp && <InputPopUp text={"Nazwa treningu: "} closePopUp={this.closePopUp} />}
+        {this.state.popUp && <InputPopUp onSubmit={this.handleSubmit} text={"Nazwa treningu: "} closePopUp={this.closePopUp} />}
 
         <Droppable style={{ flex: 1 }} droppableId="training">
           {(provided, snapshot) => (
