@@ -6,6 +6,7 @@ import { DragDropContext } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import { saveTraining, saveItems, addExercise, loadExercises, createTrainingOption } from "./trainingActions";
 import { selectById } from "../../../utilis/arrayExtractor";
+import PropTypes from 'prop-types';
 
 
 class Training extends Component {
@@ -166,5 +167,16 @@ const mapDispatchToProps = dispatch => ({
   loadExercises: (currentId) => dispatch(loadExercises(currentId)),
   createTrainingOption: (traningOption) => dispatch(createTrainingOption(traningOption))
 });
+
+
+Training.PropTypes = {
+  currentItems: PropTypes.array,
+  allItems: PropTypes.array,
+  currentTraningExercises: PropTypes.array,
+  requestedIds: PropTypes.array,
+  lastRequestedId: PropTypes.number,
+  trainingOptions: PropTypes.array
+
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Training);
