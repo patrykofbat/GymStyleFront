@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { Droppable } from "react-beautiful-dnd";
 import Card from "./Card";
 import { Dropdown } from "semantic-ui-react";
-import _ from "lodash";
 
 class ExerciseSelection extends Component {
+
+  // this will be called from api
   exerciseOptions = [
     { key: "nogi", value: "nogi", text: "nogi", id: 3000 },
     { key: "klata", value: "klata", text: "klata", id: 1000 },

@@ -4,7 +4,7 @@ import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
 import { connect } from "react-redux";
-import { saveTraining, saveItems, addExercise, loadExercises } from "./trainingActions";
+import { saveTraining, saveItems, addExercise, loadExercises, createTrainingOption } from "./trainingActions";
 import { selectById } from "../../../utilis/arrayExtractor";
 
 
@@ -138,6 +138,8 @@ class Training extends Component {
               <TrainingSelection
                 popUp={this.props.popUp}
                 items={this.state.trainings}
+                createTrainingOption={this.props.createTrainingOption}
+                trainingOptions={this.props.trainingOptions}
               />
             </Segment>
           </Grid.Column>
@@ -152,7 +154,8 @@ const mapStateToProps = state => ({
   allItems: state.allItems,
   currentTraningExercises: state.currentTraningExercises,
   requestedIds: state.requestedIds,
-  lastRequestedId: state.lastRequestedId
+  lastRequestedId: state.lastRequestedId,
+  trainingOptions: state.trainingOptions
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -160,7 +163,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addExercise(items, tranings, requestedId)),
   saveTraining: (items, currentTraningExercises) => dispatch(saveTraining(items, currentTraningExercises)),
   saveItems: (items) => dispatch(saveItems(items)),
-  loadExercises: (currentId) => dispatch(loadExercises(currentId))
+  loadExercises: (currentId) => dispatch(loadExercises(currentId)),
+  createTrainingOption: (traningOption) => dispatch(createTrainingOption(traningOption))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Training);

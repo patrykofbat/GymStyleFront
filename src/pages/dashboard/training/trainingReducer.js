@@ -1,10 +1,11 @@
-import { selectById } from "../../../utilis/arrayExtractor";
 import _ from "lodash";
 
 
 const initialState = {
   allItems: [],
   currentItems: [],
+  trainingOptions: [{ key: "new", value: "new", text: "Utwórz nowy plan" }],
+  trainings: [],
   currentTraningExercises: [],
   requestedIds: [],
   lastRequestedId: 0
@@ -24,7 +25,6 @@ const trainingReducer = (state = initialState, action) => {
 
       return {
         ...state,
-        allItems: newItems,
         currentItems: action.payload.items
       };
 
@@ -46,6 +46,14 @@ const trainingReducer = (state = initialState, action) => {
         allItems: newItems
       }
 
+    case "CREATE_TRAINING_OPTION":
+      let newTrainingOptions = [...state.trainingOptions];
+      newTrainingOptions.push(action.payload.trainingOption);
+
+      return {
+        ...state,
+        trainingOptions: newTrainingOptions
+      }
 
     default:
       return state;

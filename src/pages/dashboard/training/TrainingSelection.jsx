@@ -8,7 +8,7 @@ class TrainingSelection extends Component {
 
   state = {
     popUp: false,
-    trainingOptions: [{ key: "new", value: "new", text: "Utwórz nowy plan" }]
+    trainingOptions: this.props.trainingOptions
   }
 
   applyStyle = snapshot => ({
@@ -18,6 +18,15 @@ class TrainingSelection extends Component {
     overflowY: "auto",
     overflowX: "hidden"
   });
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.trainingOptions !== this.props.trainingOptions) {
+      this.setState({
+        popUp: false,
+        trainingOptions: this.props.trainingOptions
+      })
+    }
+  }
 
   addTraining = (event, data) => {
     if (data.value === "new") {
@@ -31,8 +40,14 @@ class TrainingSelection extends Component {
   }
 
   handleSubmit = (e, data) => {
-    console.log(data);
+    this.props.createTrainingOption({
+      key: data,
+      value: data,
+      text: data
+    });
   }
+
+
 
   render() {
     return (

@@ -41,6 +41,15 @@ export const saveItems = (items) => {
   };
 };
 
+export const createTrainingOption = (trainingOption) => {
+  return {
+    type: "CREATE_TRAINING_OPTION",
+    payload: {
+      trainingOption
+    }
+  }
+}
+
 export const loader = (items) => {
   return {
     type: "LOAD_ITEMS",
