@@ -3,6 +3,8 @@ import { Dropdown } from "semantic-ui-react";
 import Card from "./Card";
 import { Droppable } from "react-beautiful-dnd";
 import InputPopUp from "../../../components/common/InputPopUp";
+import _ from "lodash";
+
 
 class TrainingSelection extends Component {
 
@@ -64,6 +66,7 @@ class TrainingSelection extends Component {
             selection
             options={this.state.trainingOptions}
             onChange={this.addTraining}
+            text={_.last(this.state.trainingOptions).text}
           />
         </div>
         {this.state.popUp && <InputPopUp onSubmit={this.handleSubmit} text={"Nazwa treningu: "} closePopUp={this.closePopUp} />}
