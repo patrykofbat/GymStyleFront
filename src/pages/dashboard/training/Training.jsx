@@ -4,7 +4,7 @@ import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
 import { DragDropContext } from "react-beautiful-dnd";
 import { connect } from "react-redux";
-import { saveTraining, saveItems, addExercise, loadExercises, createTrainingOption } from "./trainingActions";
+import { saveTraining, saveItems, addExercise, loadExercises, createTrainingOption, saveCurrentDropdownTraining } from "./trainingActions";
 import { selectById } from "../../../utilis/arrayExtractor";
 import PropTypes from 'prop-types';
 
@@ -141,6 +141,7 @@ class Training extends Component {
                 items={this.state.trainings}
                 createTrainingOption={this.props.createTrainingOption}
                 trainingOptions={this.props.trainingOptions}
+                saveCurrentDropdownTraining={this.props.saveCurrentDropdownTraining}
               />
             </Segment>
           </Grid.Column>
@@ -165,11 +166,12 @@ const mapDispatchToProps = dispatch => ({
   saveTraining: (items, currentTraningExercises) => dispatch(saveTraining(items, currentTraningExercises)),
   saveItems: (items) => dispatch(saveItems(items)),
   loadExercises: (currentId) => dispatch(loadExercises(currentId)),
-  createTrainingOption: (traningOption) => dispatch(createTrainingOption(traningOption))
+  createTrainingOption: (traningOption) => dispatch(createTrainingOption(traningOption)),
+  saveCurrentDropdownTraining: (currentDropdownTraining) => dispatch(saveCurrentDropdownTraining(currentDropdownTraining))
 });
 
 
-Training.PropTypes = {
+Training.propTypes = {
   currentItems: PropTypes.array,
   allItems: PropTypes.array,
   currentTraningExercises: PropTypes.array,

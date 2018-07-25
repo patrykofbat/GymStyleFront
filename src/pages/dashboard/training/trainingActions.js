@@ -50,6 +50,15 @@ export const createTrainingOption = (trainingOption) => {
   }
 }
 
+export const saveCurrentDropdownTraining = (currentDropdownTraining) => {
+  return {
+    type: "SAVE_CURRENT_TRAINING",
+    payload: {
+      currentDropdownTraining
+    }
+  }
+}
+
 export const loader = (items) => {
   return {
     type: "LOAD_ITEMS",

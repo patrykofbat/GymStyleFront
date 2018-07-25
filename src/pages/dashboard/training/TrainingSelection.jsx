@@ -30,9 +30,12 @@ class TrainingSelection extends Component {
     }
   }
 
-  addTraining = (event, data) => {
+  handleChangeDropdown = (event, data) => {
     if (data.value === "new") {
       this.setState({ popUp: true });
+    }
+    else if (data.value !== undefined) {
+      this.props.saveCurrentDropdownTraining(data.value);
     }
   }
   closePopUp = () => {
@@ -65,7 +68,7 @@ class TrainingSelection extends Component {
             fluid
             selection
             options={this.state.trainingOptions}
-            onChange={this.addTraining}
+            onChange={this.handleChangeDropdown}
             text={_.last(this.state.trainingOptions).text}
           />
         </div>
