@@ -60,7 +60,7 @@ class TrainingSelection extends Component {
         <div>
           <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
             <h2 style={{ userSelect: "none" }}>Trening</h2>
-            <button>-></button>
+            <button onClick={this.props.customizeTraining}>-></button>
           </div>
           <Dropdown
             placeholder="Select training"

@@ -57,6 +57,14 @@ const trainingReducer = (state = initialState, action) => {
         currentDropdownTraining: action.payload.trainingOption.value
       }
 
+    case "CUSTOMIZE_TRAINING":
+      let newTrainings = [...state.trainings];
+      newTrainings.push(action.payload);
+      return {
+        ...state,
+        trainings: newTrainings
+      }
+
     case "SAVE_CURRENT_TRAINING":
 
       return {

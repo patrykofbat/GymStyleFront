@@ -68,6 +68,21 @@ export const loader = (items) => {
   }
 }
 
+export const customizeTraining = ({ training = { id: 2, index: 2, link: "none", content: "none" }, series = 3, reps = 8, tempo = "3110" } = {}) => {
+  const { id, index, ...newFormatTraining } = training;
+  return {
+    type: "CUSTOMIZE_TRAINING",
+    payload: {
+      ...newFormatTraining,
+      details: {
+        series,
+        reps,
+        tempo
+      }
+    }
+  }
+}
+
 
 export const loadExercises = (id) => {
   return (dispatch) => {
