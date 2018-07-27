@@ -3,14 +3,14 @@ import { Dropdown } from "semantic-ui-react";
 import Card from "./Card";
 import { Droppable } from "react-beautiful-dnd";
 import InputPopUp from "../../../components/common/InputPopUp";
-import _ from "lodash";
 
 
 class TrainingSelection extends Component {
 
   state = {
     popUp: false,
-    trainingOptions: this.props.trainingOptions
+    trainingOptions: this.props.trainingOptions,
+    currentDropdownTraining: this.props.currentDropdownTraining
   }
 
   applyStyle = snapshot => ({
@@ -26,6 +26,12 @@ class TrainingSelection extends Component {
       this.setState({
         popUp: false,
         trainingOptions: this.props.trainingOptions
+      })
+    }
+
+    if (prevProps.currentDropdownTraining !== this.props.currentDropdownTraining) {
+      this.setState({
+        currentDropdownTraining: this.props.currentDropdownTraining
       })
     }
   }
@@ -69,7 +75,7 @@ class TrainingSelection extends Component {
             selection
             options={this.state.trainingOptions}
             onChange={this.handleChangeDropdown}
-            text={_.last(this.state.trainingOptions).text}
+            text={this.state.currentDropdownTraining}
           />
         </div>
         {this.state.popUp && <InputPopUp onSubmit={this.handleSubmit} text={"Nazwa treningu: "} closePopUp={this.closePopUp} />}
@@ -81,7 +87,7 @@ class TrainingSelection extends Component {
               {...provided.droppableProps}
               style={this.applyStyle(snapshot)}
             >
-              {this.props.items.map(item => (
+              {this.props.items && this.props.items.map(item => (
                 <Card
                   link={item.link}
                   popUp={this.props.popUp}

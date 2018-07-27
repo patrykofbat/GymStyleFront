@@ -6,7 +6,7 @@ const initialState = {
   currentItems: [],
   trainingOptions: [{ key: "new", value: "new", text: "Utwórz nowy plan" }],
   trainings: [],
-  currentTraningExercises: [],
+  currentTrainingExercises: [],
   requestedIds: [],
   lastRequestedId: 0,
   currentDropdownTraining: ""
@@ -19,7 +19,7 @@ const trainingReducer = (state = initialState, action) => {
       return {
         ...state,
         currentItems: action.payload.items,
-        currentTraningExercises: action.payload.currentTraningExercises
+        currentTrainingExercises: action.payload.currentTraningExercises
       };
 
     case "SAVE_ITEMS":

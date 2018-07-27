@@ -16,7 +16,7 @@ class Training extends Component {
     this.state = {
       items: props.currentItems,
       allItems: props.allItems,
-      trainings: props.currentTraningExercises
+      trainings: props.currentTrainingExercises
     };
   }
 
@@ -47,9 +47,6 @@ class Training extends Component {
 
   }
 
-  componentWillUnmount() {
-    this.props.saveTraining(this.state.items, this.state.trainings);
-  }
 
 
   changeTable = (source, destination, result) => {
@@ -68,6 +65,7 @@ class Training extends Component {
       result.source.index
     );
     destination = this.reIndexAdded(destination, newItem);
+
 
   }
 
@@ -95,6 +93,8 @@ class Training extends Component {
           this.changeTable(prevState.items, prevState.trainings, result);
         else
           this.changeTable(prevState.trainings, prevState.items, result);
+
+        this.props.saveTraining(prevState.items, prevState.trainings);
         return { ...prevState };
       });
     }
@@ -104,6 +104,9 @@ class Training extends Component {
           this.changeTable(prevState.items, prevState.items, result);
         else
           this.changeTable(prevState.trainings, prevState.trainings, result);
+
+        this.props.saveTraining(prevState.items, prevState.trainings);
+        return { ...prevState };
       });
     }
 
@@ -143,6 +146,7 @@ class Training extends Component {
                 trainingOptions={this.props.trainingOptions}
                 saveCurrentDropdownTraining={this.props.saveCurrentDropdownTraining}
                 customizeTraining={this.props.customizeTraining}
+                currentDropdownTraining={this.props.currentDropdownTraining}
               />
             </Segment>
           </Grid.Column>
@@ -155,7 +159,7 @@ class Training extends Component {
 const mapStateToProps = state => ({
   currentItems: state.currentItems,
   allItems: state.allItems,
-  currentTraningExercises: state.currentTraningExercises,
+  currentTrainingExercises: state.currentTrainingExercises,
   requestedIds: state.requestedIds,
   lastRequestedId: state.lastRequestedId,
   trainingOptions: state.trainingOptions,
@@ -170,7 +174,7 @@ const mapDispatchToProps = dispatch => ({
   loadExercises: (currentId) => dispatch(loadExercises(currentId)),
   createTrainingOption: (traningOption) => dispatch(createTrainingOption(traningOption)),
   saveCurrentDropdownTraining: (currentDropdownTraining) => dispatch(saveCurrentDropdownTraining(currentDropdownTraining)),
-  customizeTraining: () => dispatch(customizeTraining())
+  customizeTraining: (currentDropdownTraining, currentTraningExercises) => dispatch(customizeTraining(currentDropdownTraining, currentTraningExercises))
 });
 
 
