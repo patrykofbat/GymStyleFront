@@ -85,7 +85,7 @@ class Training extends Component {
   };
 
   onDragEnd = result => {
-    if (!result.destination) {
+    if (!result.destination || !this.props.currentDropdownTraining) {
       return;
     }
 
@@ -157,7 +157,8 @@ const mapStateToProps = state => ({
   currentTraningExercises: state.currentTraningExercises,
   requestedIds: state.requestedIds,
   lastRequestedId: state.lastRequestedId,
-  trainingOptions: state.trainingOptions
+  trainingOptions: state.trainingOptions,
+  currentDropdownTraining: state.currentDropdownTraining
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -177,7 +178,8 @@ Training.propTypes = {
   currentTraningExercises: PropTypes.array,
   requestedIds: PropTypes.array,
   lastRequestedId: PropTypes.number,
-  trainingOptions: PropTypes.array
+  trainingOptions: PropTypes.array,
+  currentDropdownTraining: PropTypes.string
 
 }
 
