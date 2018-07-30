@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid, Segment } from "semantic-ui-react";
 import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
+import DetailTraining from "./DetailTraining";
 import { DragDropContext } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import { saveTraining, saveItems, addExercise, loadExercises, createTrainingOption, saveCurrentDropdownTraining, customizeTraining } from "./trainingActions";
@@ -16,7 +17,8 @@ class Training extends Component {
     this.state = {
       items: props.currentItems,
       allItems: props.allItems,
-      trainings: props.currentTrainingExercises
+      trainings: props.currentTrainingExercises,
+      isDetailTraining: props.isDetailTraining
     };
   }
 
@@ -43,6 +45,9 @@ class Training extends Component {
       this.setState({ items: this.props.currentItems });
     if (prevProps.allItems !== this.props.allItems)
       this.setState({ allItems: this.props.allItems });
+    if (prevProps.isDetailTraining !== this.props.isDetailTraining)
+      this.setState({ isDetailTraining: this.props.isDetailTraining });
+
 
 
   }
@@ -113,46 +118,54 @@ class Training extends Component {
   };
 
   render() {
-    return (
-      <DragDropContext
-        onDragUpdate={this.onDragUpdate}
-        onDragEnd={this.onDragEnd}
-      >
-        <Grid style={{ height: "75vh", display: "flex", flexDirection: "row" }}>
-          <Grid.Column
-            stretched
-            style={{ display: "flex", flexDirection: "row", height: "100%" }}
-            width={8}
-          >
-            <Segment style={{ display: "flex", flexDirection: "column" }}>
-              <ExerciseSelection
-                changeOption={this.changeOption}
-                popUp={this.props.popUp}
-                items={this.state.items}
-                lastRequestedId={this.props.requestedIds}
-              />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column
-            stretched
-            style={{ display: "flex", flexDirection: "row", height: "100%" }}
-            width={8}
-          >
-            <Segment style={{ display: "flex", flexDirection: "column" }}>
-              <TrainingSelection
-                popUp={this.props.popUp}
-                items={this.state.trainings}
-                createTrainingOption={this.props.createTrainingOption}
-                trainingOptions={this.props.trainingOptions}
-                saveCurrentDropdownTraining={this.props.saveCurrentDropdownTraining}
-                customizeTraining={this.props.customizeTraining}
-                currentDropdownTraining={this.props.currentDropdownTraining}
-              />
-            </Segment>
-          </Grid.Column>
-        </Grid>
-      </DragDropContext>
-    );
+    if (!this.state.isDetailTraining) {
+      return (
+        <DragDropContext
+          onDragUpdate={this.onDragUpdate}
+          onDragEnd={this.onDragEnd}
+        >
+          <Grid style={{ height: "75vh", display: "flex", flexDirection: "row" }}>
+            <Grid.Column
+              stretched
+              style={{ display: "flex", flexDirection: "row", height: "100%" }}
+              width={8}
+            >
+              <Segment style={{ display: "flex", flexDirection: "column" }}>
+                <ExerciseSelection
+                  changeOption={this.changeOption}
+                  popUp={this.props.popUp}
+                  items={this.state.items}
+                  lastRequestedId={this.props.requestedIds}
+                />
+              </Segment>
+            </Grid.Column>
+            <Grid.Column
+              stretched
+              style={{ display: "flex", flexDirection: "row", height: "100%" }}
+              width={8}
+            >
+              <Segment style={{ display: "flex", flexDirection: "column" }}>
+                <TrainingSelection
+                  popUp={this.props.popUp}
+                  items={this.state.trainings}
+                  createTrainingOption={this.props.createTrainingOption}
+                  trainingOptions={this.props.trainingOptions}
+                  saveCurrentDropdownTraining={this.props.saveCurrentDropdownTraining}
+                  customizeTraining={this.props.customizeTraining}
+                  currentDropdownTraining={this.props.currentDropdownTraining}
+                />
+              </Segment>
+            </Grid.Column>
+          </Grid>
+        </DragDropContext>
+
+      );
+    }
+    else {
+      return (
+        <Grid.Column><DetailTraining /></Grid.Column>
+      )
+    }
   }
 }
 
@@ -163,7 +176,8 @@ const mapStateToProps = state => ({
   requestedIds: state.requestedIds,
   lastRequestedId: state.lastRequestedId,
   trainingOptions: state.trainingOptions,
-  currentDropdownTraining: state.currentDropdownTraining
+  currentDropdownTraining: state.currentDropdownTraining,
+  isDetailTraining: state.isDetailTraining
 });
 
 const mapDispatchToProps = dispatch => ({

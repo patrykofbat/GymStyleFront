@@ -9,7 +9,8 @@ const initialState = {
   currentTrainingExercises: [],
   requestedIds: [],
   lastRequestedId: 0,
-  currentDropdownTraining: ""
+  currentDropdownTraining: "",
+  isDetailTraining: false
 };
 
 
@@ -62,7 +63,9 @@ const trainingReducer = (state = initialState, action) => {
       newTrainings.push(action.payload);
       return {
         ...state,
-        trainings: newTrainings
+        trainings: newTrainings,
+        isDetailTraining: action.payload.isDetailTraining
+
       }
 
     case "SAVE_CURRENT_TRAINING":

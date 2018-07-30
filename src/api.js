@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
     user: {
         signUp: (data) => {
-            let url = "http://192.168.1.3:80/GymStyleBackend/index.php";
+            let url = "http://192.168.1.6:8081/registration";
             axios({
                 method: 'post',
                 url,

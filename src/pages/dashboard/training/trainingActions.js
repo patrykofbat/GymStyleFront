@@ -79,7 +79,8 @@ export const customizeTraining = (nameOfTraning, exercises = [], { series = 3, r
     type: "CUSTOMIZE_TRAINING",
     payload: {
       nameOfTraning,
-      exercises: newExercises
+      exercises: newExercises,
+      isDetailTraining: true
     }
   }
 }
