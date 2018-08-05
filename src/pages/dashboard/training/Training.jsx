@@ -163,7 +163,12 @@ class Training extends Component {
     }
     else {
       return (
-        <Grid.Column><DetailTraining exercises={this.state.trainings} /></Grid.Column>
+        <DragDropContext
+          onDragUpdate={this.onDragUpdate}
+          onDragEnd={this.onDragEnd}
+        >
+          <Grid.Column><DetailTraining popUp={this.props.popUp} /></Grid.Column>
+        </DragDropContext>
       )
     }
   }

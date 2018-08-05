@@ -68,9 +68,9 @@ export const loader = (items) => {
   }
 }
 
-export const customizeTraining = (nameOfTraning, exercises = [], { series = 3, reps = 8, tempo = "2110" } = {}) => {
+export const customizeTraining = (nameOfTraining, exercises = [], { series = 3, reps = 8, tempo = "2110" } = {}) => {
   let newExercises = exercises.map((obj) => {
-    const { id, index, ...newExerciseFormat } = { ...obj, series, reps, tempo };
+    const { ...newExerciseFormat } = { ...obj, series, reps, tempo };
     return newExerciseFormat;
 
   });
@@ -78,7 +78,7 @@ export const customizeTraining = (nameOfTraning, exercises = [], { series = 3, r
   return {
     type: "CUSTOMIZE_TRAINING",
     payload: {
-      nameOfTraning,
+      nameOfTraining,
       exercises: newExercises,
       isDetailTraining: true
     }

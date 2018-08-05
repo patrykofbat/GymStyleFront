@@ -18,11 +18,12 @@ class Card extends Component {
   });
 
   render() {
+    let { id, index, content, link, popUp, series, reps, tempo } = { ...this.props };
     return (
       <Draggable
-        draggableId={this.props.id}
+        draggableId={id}
         type="PERSON"
-        index={this.props.index}
+        index={index}
       >
         {(provided, snapshot) => (
           <div style={{ margin: "0.6rem" }}>
@@ -32,11 +33,14 @@ class Card extends Component {
               {...provided.dragHandleProps}
               style={this.applyStyle(provided, snapshot)}
             >
-              <span style={{ fontSize: "0.85em" }}>{this.props.content}</span>
+              <span style={{ fontSize: "0.85em" }}>{(index + 1) + ". " + content}</span>
+              {series && <input style={{ width: "5%" }} type="text" placeholder={series} />}
+              {reps && <input style={{ width: "5%" }} type="text" placeholder={reps} />}
+              {tempo && <input style={{ width: "8%" }} type="text" placeholder={tempo} />}
               <InfoButton
-                title={this.props.content}
-                link={this.props.link}
-                onClick={this.props.popUp}
+                title={content}
+                link={link}
+                onClick={popUp}
               />
             </div>
             {provided.placeholder}
