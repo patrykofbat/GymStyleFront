@@ -163,7 +163,7 @@ class Training extends Component {
     }
     else {
       return (
-        <Grid.Column><DetailTraining /></Grid.Column>
+        <Grid.Column><DetailTraining exercises={this.state.trainings} /></Grid.Column>
       )
     }
   }

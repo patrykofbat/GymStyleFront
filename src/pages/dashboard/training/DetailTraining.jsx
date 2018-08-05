@@ -6,7 +6,11 @@ class DetailTraining extends Component {
     render() {
         return (
             <div>
-                hello
+                <ol>
+                    {this.props.exercises.map(item => (
+                        <li>{item.content}</li>
+                    ))}
+                </ol>
             </div>
         )
     }
