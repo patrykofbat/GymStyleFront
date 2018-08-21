@@ -25,14 +25,8 @@ export default {
 
     training: {
         getExercises: (selectedOption) => {
-            let url = 'http://192.168.1.5:80/GymStyleBackend/index.php';
-            return axios({
-                method: 'post',
-                url,
-                data: {
-                    selectedOption
-                }
-            });
+            let url = 'http://192.168.1.4:8081/exercises/' + selectedOption;
+            return axios.get(url);
         }
 
     }
