@@ -22,7 +22,7 @@ class DetailTraining extends Component {
 
     render() {
         return (
-            <Droppable style={{ flex: 1 }} droppableId="trainingDetail">
+            <Droppable style={{ flex: 1 }} droppableId="detailTraining">
                 {(provided, snapshot) => (
                     <div
                         ref={provided.innerRef}

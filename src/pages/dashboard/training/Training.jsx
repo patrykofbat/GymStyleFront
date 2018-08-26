@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { saveTraining, saveItems, addExercise, loadExercises, createTrainingOption, saveCurrentDropdownTraining, customizeTraining } from "./trainingActions";
 import { selectById } from "../../../utilis/arrayExtractor";
 import PropTypes from 'prop-types';
+import _ from "lodash";
 
 
 class Training extends Component {
@@ -18,7 +19,8 @@ class Training extends Component {
       items: props.currentItems,
       allItems: props.allItems,
       trainings: props.currentTrainingExercises,
-      isDetailTraining: props.isDetailTraining
+      isDetailTraining: props.isDetailTraining,
+      detailTrainings:props.detailTrainings
     };
   }
 
@@ -47,6 +49,8 @@ class Training extends Component {
       this.setState({ allItems: this.props.allItems });
     if (prevProps.isDetailTraining !== this.props.isDetailTraining)
       this.setState({ isDetailTraining: this.props.isDetailTraining });
+    if (prevProps.detailTrainings !== this.props.detailTrainings)
+      this.setState({ detailTrainings: this.props.detailTrainings });
 
 
 
@@ -63,7 +67,12 @@ class Training extends Component {
       key: removed[0].key,
       link: removed[0].link,
       img: removed[0].img,
-      description: removed[0].description
+      description: removed[0].description,
+      series:removed[0].series ? removed[0].series: undefined,
+      tempo:removed[0].tempo ? removed[0].tempo: undefined,
+      reps:removed[0].reps ? removed[0].tempo: undefined
+
+
     };
     source = this.reIndexDeleted(
       source,
@@ -107,6 +116,10 @@ class Training extends Component {
       this.setState((prevState) => {
         if (result.destination.droppableId === "exercise")
           this.changeTable(prevState.items, prevState.items, result);
+        else if(result.destination.droppableId === "detailTraining"){
+          let index =  _.findIndex(prevState.detailTrainings, (o) => o.nameOfTraining === this.props.currentDropdownTraining);
+          this.changeTable(prevState.detailTrainings[index].exercises, prevState.detailTrainings[index].exercises, result);
+        }
         else
           this.changeTable(prevState.trainings, prevState.trainings, result);
 
@@ -182,7 +195,8 @@ const mapStateToProps = state => ({
   lastRequestedId: state.lastRequestedId,
   trainingOptions: state.trainingOptions,
   currentDropdownTraining: state.currentDropdownTraining,
-  isDetailTraining: state.isDetailTraining
+  isDetailTraining: state.isDetailTraining,
+  detailTrainings: state.trainings
 });
 
 const mapDispatchToProps = dispatch => ({
