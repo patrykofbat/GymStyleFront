@@ -59,10 +59,36 @@ class Training extends Component {
 
   downloadPDF = () => {
     const pdf = new jsPDF();
+    
+    let index = _.findIndex(this.state.detailTrainings, (o) => o.nameOfTraining === this.props.currentDropdownTraining);
+    let training = this.state.detailTrainings[index];
 
-    pdf.text('Hello world!', 10, 10);
+    console.log(training);
 
-    pdf.save(this.props.currentDropdownTraining + ".pdf");
+    pdf.text(this.props.currentDropdownTraining, 80, 30);
+
+    pdf.text("Nazwa cwiczenia", 10, 60);
+    pdf.text("Serie", 90, 60);
+    pdf.text("Powtorzenia", 120, 60);
+    pdf.text("Tempo", 170, 60);
+
+
+    let y = 70;
+
+    pdf.setFontSize(6);
+
+   for(let i=0; i<training.exercises.length; i++){
+
+    pdf.text((i+1) + "." + training.exercises[i].content, 10, y);
+    pdf.text("" + training.exercises[i].series, 90, y);
+    pdf.text("" + training.exercises[i].reps, 120, y);
+    pdf.text("" + training.exercises[i].tempo, 170, y);
+
+     y += 20;
+   }
+
+
+    pdf.output('dataurlnewwindow');
 
   }
 
