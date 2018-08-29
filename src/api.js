@@ -25,7 +25,7 @@ export default {
 
     training: {
         getExercises: (selectedOption) => {
-            let url = 'http://192.168.1.4:8081/exercises/' + selectedOption;
+            let url = 'http://192.168.1.10:8081/exercises/' + selectedOption;
             return axios.get(url);
         }
 

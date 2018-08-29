@@ -9,6 +9,7 @@ import { saveTraining, saveItems, addExercise, loadExercises, createTrainingOpti
 import { selectById } from "../../../utilis/arrayExtractor";
 import PropTypes from 'prop-types';
 import _ from "lodash";
+import jsPDF from "jspdf";
 
 
 class Training extends Component {
@@ -56,6 +57,15 @@ class Training extends Component {
 
   }
 
+  downloadPDF = () => {
+    const pdf = new jsPDF();
+
+    pdf.text('Hello world!', 10, 10);
+
+    pdf.save(this.props.currentDropdownTraining + ".pdf");
+
+  }
+
 
 
   changeTable = (source, destination, result) => {
@@ -70,7 +80,7 @@ class Training extends Component {
       description: removed[0].description,
       series:removed[0].series ? removed[0].series: undefined,
       tempo:removed[0].tempo ? removed[0].tempo: undefined,
-      reps:removed[0].reps ? removed[0].tempo: undefined
+      reps:removed[0].reps ? removed[0].reps: undefined
 
 
     };
@@ -180,7 +190,10 @@ class Training extends Component {
           onDragUpdate={this.onDragUpdate}
           onDragEnd={this.onDragEnd}
         >
-          <Grid.Column><DetailTraining popUp={this.props.popUp} /></Grid.Column>
+          <Grid.Column>
+            <DetailTraining popUp={this.props.popUp} />
+            <button onClick={this.downloadPDF}>Generate PDF</button>
+          </Grid.Column>
         </DragDropContext>
       )
     }
