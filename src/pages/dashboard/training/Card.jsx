@@ -17,6 +17,11 @@ class Card extends Component {
     ...provided.draggableProps.style
   });
 
+  handleChange = (event) => {
+    this.props.handleChange(event, this.props.content);
+
+  }
+
   render() {
     let { id, index, content, link, popUp, series, reps, tempo } = { ...this.props };
     return (
@@ -34,9 +39,9 @@ class Card extends Component {
               style={this.applyStyle(provided, snapshot)}
             >
               <span style={{ fontSize: "0.85em" }}>{(index + 1) + ". " + content}</span>
-              {series && <input style={{ width: "5%" }} type="text" placeholder={series} />}
-              {reps && <input style={{ width: "5%" }} type="text" placeholder={reps} />}
-              {tempo && <input style={{ width: "8%" }} type="text" placeholder={tempo} />}
+              {series && <input id="series" onChange={this.handleChange} style={{ width: "5%" }} type="text" placeholder={series} />}
+              {reps && <input id="reps" onChange={this.handleChange} style={{ width: "5%" }} type="text" placeholder={reps} />}
+              {tempo && <input id="tempo" onChange={this.handleChange} style={{ width: "8%" }} type="text" placeholder={tempo} />}
               <InfoButton
                 title={content}
                 link={link}

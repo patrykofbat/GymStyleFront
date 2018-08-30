@@ -19,6 +19,10 @@ class DetailTraining extends Component {
         return this.props.trainings[index].exercises;
     };
 
+    handleChange = (event, content) => {
+        console.log(content);
+    }
+
 
     render() {
         return (
@@ -41,6 +45,7 @@ class DetailTraining extends Component {
                                 series={item.series}
                                 reps={item.reps}
                                 tempo={item.tempo}
+                                handleChange={this.handleChange}
 
                             />
 

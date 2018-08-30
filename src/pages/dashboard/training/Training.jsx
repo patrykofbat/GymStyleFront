@@ -63,23 +63,27 @@ class Training extends Component {
     let index = _.findIndex(this.state.detailTrainings, (o) => o.nameOfTraining === this.props.currentDropdownTraining);
     let training = this.state.detailTrainings[index];
 
-    console.log(training);
-
-    pdf.text(this.props.currentDropdownTraining, 80, 30);
+  
 
     pdf.text("Nazwa cwiczenia", 10, 60);
     pdf.text("Serie", 90, 60);
     pdf.text("Powtorzenia", 120, 60);
     pdf.text("Tempo", 170, 60);
 
+    pdf.setFontSize(24);
+
+    pdf.text(this.props.currentDropdownTraining, 95, 20);
+
 
     let y = 70;
 
-    pdf.setFontSize(6);
+    pdf.setFontSize(8);
 
    for(let i=0; i<training.exercises.length; i++){
 
-    pdf.text((i+1) + "." + training.exercises[i].content, 10, y);
+    let splitText = pdf.splitTextToSize((i+1) + "." + training.exercises[i].content, 40);
+
+    pdf.text(10, y, splitText);
     pdf.text("" + training.exercises[i].series, 90, y);
     pdf.text("" + training.exercises[i].reps, 120, y);
     pdf.text("" + training.exercises[i].tempo, 170, y);
