@@ -2,98 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbaf124e-754e-4c35-af40-39ccdf4f6840" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/dashboard/training/Card.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/dashboard/training/ExerciseSelection.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/dashboard/training/Training.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/dashboard/training/TrainingMenu.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/dashboard/training/TrainingSelection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cssdialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/common/Container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Container.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/common/Content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Content.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/common/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/common/HeaderBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/HeaderBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/common/InfoButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InfoButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/common/Logo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Logo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/common/MainContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MainContent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/common/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MyButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/common/PopUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PopUp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/dashboard/training/Card.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseCards.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseSelection.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/dashboard/training/Training.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/dashboard/training/TrainingMenu.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/dashboard/training/TrainingSelection.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/forms/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/forms/RegistrationForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/RegistrationForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/images/gymStyleIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/gymStyleIcon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/images/loginBackground.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/loginBackground.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/images/loginBg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/loginBg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/messages/InlineError.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/messages/InlineError.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/pages/RegistrationPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegistrationPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/pages/StartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StartPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/components/pages/UserPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UserPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/Container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/Container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/Container.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/Container.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/Container.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/Container.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/Content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/Content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/Content.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/Content.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/Content.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/Content.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/Header.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/Header.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/Header.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/Header.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/MyButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/MyButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/MyButton.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/MyButton.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/common/MyButton.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/MyButton.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/forms/LoginForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/forms/LoginForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/forms/LoginForm.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/forms/LoginForm.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/forms/LoginForm.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/forms/LoginForm.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/forms/RegistrationForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/forms/RegistrationForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/forms/RegistrationForm.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/forms/RegistrationForm.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/forms/RegistrationForm.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/forms/RegistrationForm.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/pages/LoginPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/pages/LoginPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/pages/LoginPage.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/pages/LoginPage.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/pages/LoginPage.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/pages/LoginPage.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/pages/RegistrationPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/pages/RegistrationPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/pages/RegistrationPage.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/pages/RegistrationPage.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/pages/RegistrationPage.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/pages/RegistrationPage.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/pages/StartPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/pages/StartPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/pages/StartPage.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/pages/StartPage.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilis/style/components/pages/StartPage.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/pages/StartPage.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/training/trainingActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/training/trainingActions.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1788356322">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="1" />
+          <entry key="json" value="1" />
+          <entry key="jsx" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="1" />
+          <entry key="JSX Harmony" value="2" />
+          <entry key="JavaScript" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="31" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="31" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ExerciseSelection.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/ExerciseSelection.jsx">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/common/MyButton.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="408">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyButton.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/common/MyButton.jsx">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.eslintrc.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="34">
+              <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/registrationPage/RegistrationForm.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -101,77 +83,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginForm.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/forms/LoginForm.jsx">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/registrationPage/RegistrationPage.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            <state>
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Header.jsx" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/common/Header.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationForm.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/forms/RegistrationForm.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginPage.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/LoginPage.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="54" lean-forward="true" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationPage.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/RegistrationPage.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationPage.sass" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/style/pages/RegistrationPage.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginPage.sass" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/style/pages/LoginPage.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -225,7 +161,6 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/rootReducer.js" />
         <option value="$PROJECT_DIR$/src/utilis/components/pages/RegistrationPage.jsx" />
-        <option value="$PROJECT_DIR$/src/api.js" />
         <option value="$PROJECT_DIR$/src/utilis/components/pages/LoginPage.jsx" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/utilis/components/dashboard/training/Training.jsx" />
@@ -246,6 +181,7 @@
         <option value="$PROJECT_DIR$/src/pages/LoginPage.jsx" />
         <option value="$PROJECT_DIR$/src/style/pages/RegistrationPage.sass" />
         <option value="$PROJECT_DIR$/src/style/pages/LoginPage.sass" />
+        <option value="$PROJECT_DIR$/src/api.js" />
       </list>
     </option>
   </component>
@@ -271,7 +207,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="263" />
     <option name="y" value="242" />
     <option name="width" value="1382" />
@@ -299,42 +235,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="gym-style-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gym-style-front" type="462c0819:PsiDirectoryNode" />
+              <item name="GymStyleFrontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GymStyleFrontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="gym-style-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gym-style-front" type="462c0819:PsiDirectoryNode" />
+              <item name="GymStyleFrontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GymStyleFrontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="gym-style-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gym-style-front" type="462c0819:PsiDirectoryNode" />
+              <item name="GymStyleFrontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GymStyleFrontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="gym-style-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gym-style-front" type="462c0819:PsiDirectoryNode" />
+              <item name="GymStyleFrontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GymStyleFrontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gym-style-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gym-style-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="registrationPage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -378,6 +308,7 @@
       </scripts>
       <node-interpreter value="node" />
       <envs />
+      <method v="2" />
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -501,6 +432,8 @@
       <workItem from="1525854704330" duration="682000" />
       <workItem from="1525900721940" duration="922000" />
       <workItem from="1526480379923" duration="2380000" />
+      <workItem from="1538669747044" duration="914000" />
+      <workItem from="1538674897289" duration="805000" />
     </task>
     <task id="LOCAL-00001" summary="add logo, change view of login, button disable">
       <created>1519127524508</created>
@@ -618,31 +551,30 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213872000" />
+    <option name="totallyTimeSpent" value="215591000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48556876" visible="true" weight="0.16344994" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.505" side_tool="true" weight="0.13903743" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32921347" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.495" weight="0.12837838" />
-      <window_info id="npm" order="2" sideWeight="0.51443124" side_tool="true" weight="0.20808202" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33820224" />
+      <window_info id="npm" order="2" sideWeight="0.51443124" side_tool="true" weight="0.20808202" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.14037433" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.495" weight="0.2881166" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.505" side_tool="true" weight="0.13903743" />
+      <window_info anchor="bottom" id="Messages" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32921347" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33820224" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="8" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.14037433" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,26 +603,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="embeded youtube video for popup" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/ExerciseSelection.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-route/node_modules/object-assign/index.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/react-route/node_modules/object-assign/package.json" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-route/index.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-route/example/index.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-route/lib/route.js" />
     <entry file="file://$PROJECT_DIR$/src/App.test.js" />
-    <entry file="file://$PROJECT_DIR$/src/style/components/common/MyButton.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/components/common/MyButton.sass" />
     <entry file="file://$PROJECT_DIR$/src/components/common/Container.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -698,25 +615,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/components/common/Container.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/components/forms/LoginForm.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/components/common/Header.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/components/common/Container.sass" />
+    <entry file="file://$PROJECT_DIR$/src/style/components/forms/LoginForm.css" />
+    <entry file="file://$PROJECT_DIR$/src/style/components/common/Header.sass" />
     <entry file="file://$PROJECT_DIR$/node_modules/validator/lib/isEmail.js" />
     <entry file="file://$PROJECT_DIR$/src/components/messages/InlineError.jsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -745,13 +646,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/components/forms/RegistrationForm.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/components/forms/RegistrationForm.sass" />
     <entry file="file://$PROJECT_DIR$/src/utilis/actions/userActions.js" />
     <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -761,13 +656,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utilis/reducers/userReducer.js" />
-    <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseCards.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utilis/components/dashboard/training/ExerciseCards.jsx" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -783,13 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -797,13 +679,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/components/forms/LoginForm.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/components/forms/LoginForm.sass" />
     <entry file="file://$PROJECT_DIR$/src/components/common/InfoButton.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -811,44 +687,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/Card.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/UserPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/StartPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Dashboard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/Card.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/pages/UserPage.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/pages/StartPage.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/pages/Dashboard.jsx" />
     <entry file="file://$PROJECT_DIR$/src/components/common/Logo.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -856,9 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -869,131 +712,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/common/MainContent.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/common/MainContent.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/Training.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/TrainingMenu.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/TrainingSelection.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/ExerciseSelection.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/forms/LoginForm.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/forms/RegistrationForm.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/pages/LoginPage.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/pages/RegistrationPage.jsx" />
+    <entry file="file://$PROJECT_DIR$/src/style/pages/RegistrationPage.sass" />
+    <entry file="file://$PROJECT_DIR$/src/style/pages/StartPage.sass" />
+    <entry file="file://$PROJECT_DIR$/src/style/pages/LoginPage.sass" />
+    <entry file="file://$PROJECT_DIR$/src/components/common/MyButton.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/Training.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/TrainingMenu.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/TrainingSelection.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/training/ExerciseSelection.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/common/Header.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/common/MyButton.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/forms/LoginForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/forms/RegistrationForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/LoginPage.jsx">
+    <entry file="file://$PROJECT_DIR$/.eslintrc.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="54" lean-forward="true" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/RegistrationPage.jsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/registrationPage/RegistrationForm.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state>
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/pages/RegistrationPage.sass">
+    <entry file="file://$PROJECT_DIR$/src/pages/registrationPage/RegistrationPage.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/pages/StartPage.sass">
+    <entry file="file://$PROJECT_DIR$/src/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/pages/LoginPage.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="238">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
