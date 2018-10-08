@@ -48,7 +48,7 @@ export const createTrainingOption = (trainingOption) => {
       trainingOption
     }
   }
-}
+};
 
 export const saveCurrentDropdownTraining = (currentDropdownTraining) => {
   return {
@@ -57,7 +57,7 @@ export const saveCurrentDropdownTraining = (currentDropdownTraining) => {
       currentDropdownTraining
     }
   }
-}
+};
 
 export const loader = (items) => {
   return {
@@ -66,7 +66,7 @@ export const loader = (items) => {
       items
     }
   }
-}
+};
 
 export const customizeTraining = (nameOfTraining, exercises = [], { series = 3, reps = 8, tempo = "2110" } = {}) => {
   let newExercises = exercises.map((obj) => {
@@ -83,7 +83,7 @@ export const customizeTraining = (nameOfTraining, exercises = [], { series = 3, 
       isDetailTraining: true
     }
   }
-}
+};
 
 
 export const loadExercises = (id) => {
@@ -105,7 +105,28 @@ export const loadExercises = (id) => {
       }
     })
   }
-}
+};
+
+export const getPDF = (data) => {
+  return (dispatch) => {
+    return api.training.getPDF(data).then((response) =>{
+      if(response.status === 200){
+        console.log(response.data);
+        dispatch(downloadPDF(response.data))
+      }
+    })
+  }
+
+};
+
+export const downloadPDF = (link) =>{
+  return {
+    type:"DOWNLOAD_PDF",
+      payload:{
+        link
+      }
+  }
+};
 
 
 

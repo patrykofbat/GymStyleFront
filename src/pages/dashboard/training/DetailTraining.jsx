@@ -21,7 +21,7 @@ class DetailTraining extends Component {
 
     handleChange = (event, content) => {
         console.log(content);
-    }
+    };
 
 
     render() {

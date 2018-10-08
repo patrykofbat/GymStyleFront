@@ -5,7 +5,7 @@ import ExerciseSelection from "./ExerciseSelection";
 import DetailTraining from "./DetailTraining";
 import { DragDropContext } from "react-beautiful-dnd";
 import { connect } from "react-redux";
-import { saveTraining, saveItems, addExercise, loadExercises, createTrainingOption, saveCurrentDropdownTraining, customizeTraining } from "./trainingActions";
+import { saveTraining, saveItems, addExercise, loadExercises, createTrainingOption, saveCurrentDropdownTraining, customizeTraining, getPDF } from "./trainingActions";
 import { selectById } from "../../../utilis/arrayExtractor";
 import PropTypes from 'prop-types';
 import _ from "lodash";
@@ -58,43 +58,8 @@ class Training extends Component {
   }
 
   downloadPDF = () => {
-    const pdf = new jsPDF();
-    
-    let index = _.findIndex(this.state.detailTrainings, (o) => o.nameOfTraining === this.props.currentDropdownTraining);
-    let training = this.state.detailTrainings[index];
-
-  
-
-    pdf.text("Nazwa cwiczenia", 10, 60);
-    pdf.text("Serie", 90, 60);
-    pdf.text("Powtorzenia", 120, 60);
-    pdf.text("Tempo", 170, 60);
-
-    pdf.setFontSize(24);
-
-    pdf.text(this.props.currentDropdownTraining, 95, 20);
-
-
-    let y = 70;
-
-    pdf.setFontSize(8);
-
-   for(let i=0; i<training.exercises.length; i++){
-
-    let splitText = pdf.splitTextToSize((i+1) + "." + training.exercises[i].content, 40);
-
-    pdf.text(10, y, splitText);
-    pdf.text("" + training.exercises[i].series, 90, y);
-    pdf.text("" + training.exercises[i].reps, 120, y);
-    pdf.text("" + training.exercises[i].tempo, 170, y);
-
-     y += 20;
-   }
-
-
-    pdf.output('dataurlnewwindow');
-
-  }
+    this.props.getPDF(this.state.detailTrainings);
+  };
 
 
 
@@ -121,7 +86,7 @@ class Training extends Component {
     destination = this.reIndexAdded(destination, newItem);
 
 
-  }
+  };
 
   changeOption = currentId => {
     if (this.props.requestedIds.includes(currentId)) {
@@ -239,7 +204,8 @@ const mapStateToProps = state => ({
   trainingOptions: state.trainingOptions,
   currentDropdownTraining: state.currentDropdownTraining,
   isDetailTraining: state.isDetailTraining,
-  detailTrainings: state.trainings
+  detailTrainings: state.trainings,
+  link:state.link
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -250,7 +216,8 @@ const mapDispatchToProps = dispatch => ({
   loadExercises: (currentId) => dispatch(loadExercises(currentId)),
   createTrainingOption: (traningOption) => dispatch(createTrainingOption(traningOption)),
   saveCurrentDropdownTraining: (currentDropdownTraining) => dispatch(saveCurrentDropdownTraining(currentDropdownTraining)),
-  customizeTraining: (currentDropdownTraining, currentTraningExercises) => dispatch(customizeTraining(currentDropdownTraining, currentTraningExercises))
+  customizeTraining: (currentDropdownTraining, currentTraningExercises) => dispatch(customizeTraining(currentDropdownTraining, currentTraningExercises)),
+  getPDF:(data) => dispatch(getPDF(data))
 });
 
 
@@ -263,6 +230,6 @@ Training.propTypes = {
   trainingOptions: PropTypes.array,
   currentDropdownTraining: PropTypes.string
 
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Training);

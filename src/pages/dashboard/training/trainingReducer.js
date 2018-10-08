@@ -10,6 +10,7 @@ const initialState = {
   requestedIds: [],
   lastRequestedId: 0,
   currentDropdownTraining: "",
+  link:"",
   isDetailTraining: false
 };
 
@@ -46,7 +47,7 @@ const trainingReducer = (state = initialState, action) => {
         requestedIds: newRequestedIds,
         lastRequestedId: action.payload.items[0].id,
         allItems: newItems
-      }
+      };
 
     case "CREATE_TRAINING_OPTION":
       let newTrainingOptions = [...state.trainingOptions];
@@ -56,7 +57,7 @@ const trainingReducer = (state = initialState, action) => {
         ...state,
         trainingOptions: newTrainingOptions,
         currentDropdownTraining: action.payload.trainingOption.value
-      }
+      };
 
     case "CUSTOMIZE_TRAINING":
       let newTrainings = [...state.trainings];
@@ -66,14 +67,20 @@ const trainingReducer = (state = initialState, action) => {
         trainings: newTrainings,
         isDetailTraining: action.payload.isDetailTraining
 
-      }
+      };
 
     case "SAVE_CURRENT_TRAINING":
 
       return {
         ...state,
         currentDropdownTraining: action.payload.currentDropdownTraining
-      }
+      };
+
+      case "DOWNLOAD_PDF":
+        return {
+            ...state,
+            downloadLink : action.payload.link
+        };
 
 
     default:

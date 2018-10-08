@@ -27,9 +27,18 @@ export default {
 
     training: {
         getExercises: (selectedOption) => {
-            let url = 'http://192.168.1.10:8081/exercises/' + selectedOption;
+            let url = "http://localhost:8081/exercises/" + selectedOption;
             return axios.get(url);
+        },
+        getPDF: (data) =>{
+            let url = "http://localhost:8081/PDF";
+            return axios({
+                method:'post',
+                url: url,
+                data
+            });
         }
+
 
     }
 
