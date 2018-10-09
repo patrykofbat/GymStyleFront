@@ -20,7 +20,7 @@ class Card extends Component {
   handleChange = (event) => {
     this.props.handleChange(event, this.props.content);
 
-  }
+  };
 
   render() {
     let { id, index, content, link, popUp, series, reps, tempo } = { ...this.props };

@@ -79,7 +79,7 @@ const trainingReducer = (state = initialState, action) => {
       case "DOWNLOAD_PDF":
         return {
             ...state,
-            downloadLink : action.payload.link
+            link: action.payload.link
         };
 
 

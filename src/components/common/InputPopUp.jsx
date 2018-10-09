@@ -13,12 +13,12 @@ class InputPopUp extends Component {
         this.setState({
             value: e.target.value
         });
-    }
+    };
 
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.onSubmit(e, this.state.value);
-    }
+    };
 
     render() {
         return (
@@ -29,8 +29,8 @@ class InputPopUp extends Component {
                         <button onClick={this.props.closePopUp}>x</button>
                     </div>
                     <form onSubmit={this.handleSubmit}>
-                        <input onChange={this.handleChange} type='text'></input>
-                        <input type='submit' value="Utwórz"></input>
+                        <input onChange={this.handleChange} type='text'/>
+                        <input type='submit' value="Utwórz"/>
                     </form>
                 </div>
             </div>

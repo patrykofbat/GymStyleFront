@@ -1,15 +1,24 @@
-import React, { Component } from "react";
-import { Grid, Segment } from "semantic-ui-react";
+import React, {Component} from "react";
+import {Grid, Segment} from "semantic-ui-react";
 import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
 import DetailTraining from "./DetailTraining";
-import { DragDropContext } from "react-beautiful-dnd";
-import { connect } from "react-redux";
-import { saveTraining, saveItems, addExercise, loadExercises, createTrainingOption, saveCurrentDropdownTraining, customizeTraining, getPDF } from "./trainingActions";
-import { selectById } from "../../../utilis/arrayExtractor";
+import {DragDropContext} from "react-beautiful-dnd";
+import {connect} from "react-redux";
+import {
+    addExercise,
+    createTrainingOption,
+    customizeTraining,
+    getPDF,
+    loadExercises,
+    saveCurrentDropdownTraining,
+    saveItems,
+    saveTraining
+} from "./trainingActions";
+import {selectById} from "../../../utilis/arrayExtractor";
 import PropTypes from 'prop-types';
 import _ from "lodash";
-import jsPDF from "jspdf";
+import DownloadLinkPopUp from "../../../components/common/DownloadLinkPopUp";
 
 
 class Training extends Component {
@@ -21,7 +30,8 @@ class Training extends Component {
       allItems: props.allItems,
       trainings: props.currentTrainingExercises,
       isDetailTraining: props.isDetailTraining,
-      detailTrainings:props.detailTrainings
+      detailTrainings:props.detailTrainings,
+        downloadPopUp:props.link
     };
   }
 
@@ -52,6 +62,8 @@ class Training extends Component {
       this.setState({ isDetailTraining: this.props.isDetailTraining });
     if (prevProps.detailTrainings !== this.props.detailTrainings)
       this.setState({ detailTrainings: this.props.detailTrainings });
+    if (prevProps.link !== this.props.link)
+        this.setState({ link: this.props.link});
 
 
 
@@ -99,6 +111,10 @@ class Training extends Component {
     }
 
 
+  };
+
+  closePopUp = () => {
+    this.setState({link:""});
   };
 
   onDragEnd = result => {
@@ -188,6 +204,8 @@ class Training extends Component {
           <Grid.Column>
             <DetailTraining popUp={this.props.popUp} />
             <button onClick={this.downloadPDF}>Generate PDF</button>
+              {this.state.link && <DownloadLinkPopUp link={this.state.link}
+                                                     closePopUp={this.closePopUp}/>}
           </Grid.Column>
         </DragDropContext>
       )

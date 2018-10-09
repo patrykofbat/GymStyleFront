@@ -11,7 +11,7 @@ class TrainingSelection extends Component {
     popUp: false,
     trainingOptions: this.props.trainingOptions,
     currentDropdownTraining: this.props.currentDropdownTraining
-  }
+  };
 
   applyStyle = snapshot => ({
     boxSizing: "border-box",
@@ -43,12 +43,13 @@ class TrainingSelection extends Component {
     else if (data.value !== undefined) {
       this.props.saveCurrentDropdownTraining(data.value);
     }
-  }
+  };
+
   closePopUp = () => {
     this.setState({
       popUp: false
     });
-  }
+  };
 
   handleSubmit = (e, data) => {
     this.props.createTrainingOption({
@@ -56,11 +57,11 @@ class TrainingSelection extends Component {
       value: data,
       text: data
     });
-  }
+  };
 
   customizeTraining = () => {
     this.props.customizeTraining(this.state.currentDropdownTraining, this.props.items);
-  }
+  };
 
 
 

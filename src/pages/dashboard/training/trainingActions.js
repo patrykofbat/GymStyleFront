@@ -112,7 +112,7 @@ export const getPDF = (data) => {
     return api.training.getPDF(data).then((response) =>{
       if(response.status === 200){
         console.log(response.data);
-        dispatch(downloadPDF(response.data))
+        dispatch(downloadPDF(response.data.link))
       }
     })
   }
