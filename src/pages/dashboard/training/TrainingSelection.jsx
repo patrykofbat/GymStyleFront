@@ -67,10 +67,10 @@ class TrainingSelection extends Component {
 
   render() {
     return (
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div>
-          <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-            <h2 style={{ userSelect: "none" }}>Trening</h2>
+      <div className={"TrainingSelectionContainer"}>
+        <div className={"TrainingSelectionHeader"}>
+          <div>
+            <h2>Trening</h2>
             <button onClick={this.customizeTraining}>-></button>
           </div>
           <Dropdown

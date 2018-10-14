@@ -29,7 +29,7 @@ class InputPopUp extends Component {
                         <button onClick={this.props.closePopUp}>x</button>
                     </div>
                     <form onSubmit={this.handleSubmit}>
-                        <input onChange={this.handleChange} type='text'/>
+                        <input className={"TextField"} onChange={this.handleChange} type='text'/>
                         <input type='submit' value="Utwórz"/>
                     </form>
                 </div>
