@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Droppable } from "react-beautiful-dnd";
 import Card from "./Card";
-import { Dropdown } from "semantic-ui-react";
+import {Dropdown} from "semantic-ui-react";
+import Spinner from "../../../components/common/Spinner";
 
 class ExerciseSelection extends Component {
 

@@ -19,6 +19,7 @@ import {selectById} from "../../../utilis/arrayExtractor";
 import PropTypes from 'prop-types';
 import _ from "lodash";
 import DownloadLinkPopUp from "../../../components/common/DownloadLinkPopUp";
+import Spinner from "../../../components/common/Spinner";
 
 
 class Training extends Component {
@@ -31,7 +32,8 @@ class Training extends Component {
       trainings: props.currentTrainingExercises,
       isDetailTraining: props.isDetailTraining,
       detailTrainings:props.detailTrainings,
-        downloadPopUp:props.link
+        downloadPopUp:props.link,
+        spin: false
     };
   }
 
@@ -107,6 +109,10 @@ class Training extends Component {
       });
     }
     else {
+      this.setState({
+          items:[],
+          spin:true
+      });
       this.props.loadExercises(currentId);
     }
 
@@ -171,6 +177,7 @@ class Training extends Component {
                   items={this.state.items}
                   lastRequestedId={this.props.requestedIds}
                 />
+                  {(this.state.items.length === 0 && this.state.spin) && <Spinner/>}
               </Segment>
             </Grid.Column>
             <Grid.Column
