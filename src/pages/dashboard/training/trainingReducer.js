@@ -60,7 +60,7 @@ const trainingReducer = (state = initialState, action) => {
       };
 
     case "CUSTOMIZE_TRAINING":
-      let newTrainings = [...state.trainings];
+      let newTrainings = [];
       newTrainings.push(action.payload);
       return {
         ...state,
@@ -76,11 +76,31 @@ const trainingReducer = (state = initialState, action) => {
         currentDropdownTraining: action.payload.currentDropdownTraining
       };
 
-      case "DOWNLOAD_PDF":
+    case "DOWNLOAD_PDF":
+      return {
+          ...state,
+          link: action.payload.link
+      };
+
+    case "CHANGE_DETAILS_TRAINING":
+      let newDetailTrainings = [...state.trainings];
+
+
         return {
-            ...state,
-            link: action.payload.link
-        };
+          ...state,
+          trainings: newDetailTrainings.map((item)=>{
+            return {
+              ...item,
+              exercises:item.exercises.map((exercise, index) => {
+                return{
+                  ...exercise,
+                  ...action.payload.details[index]
+                }
+              })
+            }
+          })
+
+        }
 
 
     default:

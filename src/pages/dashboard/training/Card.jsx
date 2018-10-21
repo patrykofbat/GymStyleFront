@@ -39,9 +39,9 @@ class Card extends Component {
               style={this.applyStyle(provided, snapshot)}
             >
               <span style={{ fontSize: "0.85em" }}>{(index + 1) + ". " + content}</span>
-              {series && <input id="series" onChange={this.handleChange} style={{ width: "5%" }} type="text" placeholder={series} />}
-              {reps && <input id="reps" onChange={this.handleChange} style={{ width: "5%" }} type="text" placeholder={reps} />}
-              {tempo && <input id="tempo" onChange={this.handleChange} style={{ width: "8%" }} type="text" placeholder={tempo} />}
+              {series && <input id="series" name="series" onChange={this.handleChange} style={{ width: "5%" }} type="text" placeholder={series} />}
+              {reps && <input id="reps" name="reps" onChange={this.handleChange} style={{ width: "5%" }} type="text" placeholder={reps} />}
+              {tempo && <input id="tempo"name="tempo" onChange={this.handleChange} style={{ width: "8%" }} type="text" placeholder={tempo} />}
               <InfoButton
                 title={content}
                 link={link}

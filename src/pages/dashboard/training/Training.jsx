@@ -13,7 +13,8 @@ import {
     loadExercises,
     saveCurrentDropdownTraining,
     saveItems,
-    saveTraining
+    saveTraining,
+    changeDetailsTraining
 } from "./trainingActions";
 import {selectById} from "../../../utilis/arrayExtractor";
 import PropTypes from 'prop-types';
@@ -209,7 +210,12 @@ class Training extends Component {
           onDragEnd={this.onDragEnd}
         >
           <Grid.Column>
-            <DetailTraining popUp={this.props.popUp} />
+            <DetailTraining
+              popUp={this.props.popUp}
+              trainings={this.props.detailTrainings}
+              currentDropdownTraining={this.props.currentDropdownTraining}
+              changeDetailsTraining={this.props.changeDetailsTraining}
+            />
             <button onClick={this.downloadPDF}>Generate PDF</button>
               {this.state.link && <DownloadLinkPopUp link={this.state.link}
                                                      closePopUp={this.closePopUp}/>}
@@ -242,7 +248,8 @@ const mapDispatchToProps = dispatch => ({
   createTrainingOption: (traningOption) => dispatch(createTrainingOption(traningOption)),
   saveCurrentDropdownTraining: (currentDropdownTraining) => dispatch(saveCurrentDropdownTraining(currentDropdownTraining)),
   customizeTraining: (currentDropdownTraining, currentTraningExercises) => dispatch(customizeTraining(currentDropdownTraining, currentTraningExercises)),
-  getPDF:(data) => dispatch(getPDF(data))
+  getPDF:(data) => dispatch(getPDF(data)),
+  changeDetailsTraining: (details)=>dispatch(changeDetailsTraining(details))
 });
 
 

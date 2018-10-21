@@ -5,6 +5,16 @@ import { connect } from "react-redux";
 import _ from "lodash";
 
 class DetailTraining extends Component {
+    
+    state = {
+        details:this.props.trainings[0].exercises.map(({series, reps, tempo})=>{
+            return {
+                series,
+                reps,
+                tempo
+            }
+        })
+    }
 
     applyStyle = snapshot => ({
         boxSizing: "border-box",
@@ -20,8 +30,23 @@ class DetailTraining extends Component {
     };
 
     handleChange = (event, content) => {
-        console.log(content);
+        event.persist();
+        let index = _.findIndex(this.props.trainings[0].exercises, (o) => o.content === content);
+
+        this.setState((prevState) => {
+            let newDetails = [...prevState.details];
+            newDetails[index] = {...newDetails[index], [event.target.name]: event.target.value}
+            return {
+                ...prevState,
+                details: newDetails
+            }
+        }, this.updateRedux);
+       
     };
+
+    updateRedux = () => {
+        this.props.changeDetailsTraining(this.state.details);
+    }
 
 
     render() {
@@ -59,15 +84,6 @@ class DetailTraining extends Component {
 
 }
 
-const mapStateToProps = (state) => ({
-    trainings: state.trainings,
-    currentDropdownTraining: state.currentDropdownTraining
 
-});
-
-const mapDispatchToProps = dispatch => ({
-
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(DetailTraining);
+export default DetailTraining;
 
