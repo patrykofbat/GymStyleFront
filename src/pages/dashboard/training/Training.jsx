@@ -1,30 +1,28 @@
-import React, {Component} from "react";
-import {Grid, Segment} from "semantic-ui-react";
+import React, { Component } from "react";
+import { Grid, Segment } from "semantic-ui-react";
 import TrainingSelection from "./TrainingSelection";
 import ExerciseSelection from "./ExerciseSelection";
 import DetailTraining from "./DetailTraining";
-import {DragDropContext} from "react-beautiful-dnd";
-import {connect} from "react-redux";
+import { DragDropContext } from "react-beautiful-dnd";
+import { connect } from "react-redux";
 import {
-    addExercise,
-    createTrainingOption,
-    customizeTraining,
-    getPDF,
-    loadExercises,
-    saveCurrentDropdownTraining,
-    saveItems,
-    saveTraining,
-    changeDetailsTraining
+  addExercise,
+  createTrainingOption,
+  customizeTraining,
+  getPDF,
+  loadExercises,
+  saveCurrentDropdownTraining,
+  saveItems,
+  saveTraining,
+  changeDetailsTraining
 } from "./trainingActions";
-import {selectById} from "../../../utilis/arrayExtractor";
-import PropTypes from 'prop-types';
+import { selectById } from "../../../utilis/arrayExtractor";
+import PropTypes from "prop-types";
 import _ from "lodash";
 import DownloadLinkPopUp from "../../../components/common/DownloadLinkPopUp";
 import Spinner from "../../../components/common/Spinner";
 
-
 class Training extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -32,9 +30,9 @@ class Training extends Component {
       allItems: props.allItems,
       trainings: props.currentTrainingExercises,
       isDetailTraining: props.isDetailTraining,
-      detailTrainings:props.detailTrainings,
-        downloadPopUp:props.link,
-        spin: false
+      detailTrainings: props.detailTrainings,
+      spin: false,
+      downloadLinkPopUp: false
     };
   }
 
@@ -66,17 +64,13 @@ class Training extends Component {
     if (prevProps.detailTrainings !== this.props.detailTrainings)
       this.setState({ detailTrainings: this.props.detailTrainings });
     if (prevProps.link !== this.props.link)
-        this.setState({ link: this.props.link});
-
-
-
+      this.setState({ link: this.props.link });
   }
 
   downloadPDF = () => {
     this.props.getPDF(this.state.detailTrainings);
+    this.setState({ downloadLinkPopUp: true });
   };
-
-
 
   changeTable = (source, destination, result) => {
     let removed = source.splice(result.source.index, 1);
@@ -88,19 +82,12 @@ class Training extends Component {
       link: removed[0].link,
       img: removed[0].img,
       description: removed[0].description,
-      series:removed[0].series ? removed[0].series: undefined,
-      tempo:removed[0].tempo ? removed[0].tempo: undefined,
-      reps:removed[0].reps ? removed[0].reps: undefined
-
-
+      series: removed[0].series ? removed[0].series : undefined,
+      tempo: removed[0].tempo ? removed[0].tempo : undefined,
+      reps: removed[0].reps ? removed[0].reps : undefined
     };
-    source = this.reIndexDeleted(
-      source,
-      result.source.index
-    );
+    source = this.reIndexDeleted(source, result.source.index);
     destination = this.reIndexAdded(destination, newItem);
-
-
   };
 
   changeOption = currentId => {
@@ -108,20 +95,17 @@ class Training extends Component {
       this.setState({
         items: selectById(this.state.allItems, currentId)
       });
-    }
-    else {
+    } else {
       this.setState({
-          items:[],
-          spin:true
+        items: [],
+        spin: true
       });
       this.props.loadExercises(currentId);
     }
-
-
   };
 
   closePopUp = () => {
-    this.setState({link:""});
+    this.setState({ downloadLinkPopUp: false });
   };
 
   onDragEnd = result => {
@@ -130,32 +114,35 @@ class Training extends Component {
     }
 
     if (result.destination.droppableId !== result.source.droppableId) {
-      this.setState((prevState) => {
+      this.setState(prevState => {
         if (result.destination.droppableId === "training")
           this.changeTable(prevState.items, prevState.trainings, result);
-        else
-          this.changeTable(prevState.trainings, prevState.items, result);
+        else this.changeTable(prevState.trainings, prevState.items, result);
 
         this.props.saveTraining(prevState.items, prevState.trainings);
         return { ...prevState };
       });
-    }
-    else {
-      this.setState((prevState) => {
+    } else {
+      this.setState(prevState => {
         if (result.destination.droppableId === "exercise")
           this.changeTable(prevState.items, prevState.items, result);
-        else if(result.destination.droppableId === "detailTraining"){
-          let index =  _.findIndex(prevState.detailTrainings, (o) => o.nameOfTraining === this.props.currentDropdownTraining);
-          this.changeTable(prevState.detailTrainings[index].exercises, prevState.detailTrainings[index].exercises, result);
-        }
-        else
+        else if (result.destination.droppableId === "detailTraining") {
+          let index = _.findIndex(
+            prevState.detailTrainings,
+            o => o.nameOfTraining === this.props.currentDropdownTraining
+          );
+          this.changeTable(
+            prevState.detailTrainings[index].exercises,
+            prevState.detailTrainings[index].exercises,
+            result
+          );
+        } else
           this.changeTable(prevState.trainings, prevState.trainings, result);
 
         this.props.saveTraining(prevState.items, prevState.trainings);
         return { ...prevState };
       });
     }
-
   };
 
   render() {
@@ -165,7 +152,9 @@ class Training extends Component {
           onDragUpdate={this.onDragUpdate}
           onDragEnd={this.onDragEnd}
         >
-          <Grid style={{ height: "75vh", display: "flex", flexDirection: "row" }}>
+          <Grid
+            style={{ height: "75vh", display: "flex", flexDirection: "row" }}
+          >
             <Grid.Column
               stretched
               style={{ display: "flex", flexDirection: "row", height: "100%" }}
@@ -178,7 +167,8 @@ class Training extends Component {
                   items={this.state.items}
                   lastRequestedId={this.props.requestedIds}
                 />
-                  {(this.state.items.length === 0 && this.state.spin) && <Spinner/>}
+                {this.state.items.length === 0 &&
+                  this.state.spin && <Spinner />}
               </Segment>
             </Grid.Column>
             <Grid.Column
@@ -192,7 +182,9 @@ class Training extends Component {
                   items={this.state.trainings}
                   createTrainingOption={this.props.createTrainingOption}
                   trainingOptions={this.props.trainingOptions}
-                  saveCurrentDropdownTraining={this.props.saveCurrentDropdownTraining}
+                  saveCurrentDropdownTraining={
+                    this.props.saveCurrentDropdownTraining
+                  }
                   customizeTraining={this.props.customizeTraining}
                   currentDropdownTraining={this.props.currentDropdownTraining}
                 />
@@ -200,10 +192,8 @@ class Training extends Component {
             </Grid.Column>
           </Grid>
         </DragDropContext>
-
       );
-    }
-    else {
+    } else {
       return (
         <DragDropContext
           onDragUpdate={this.onDragUpdate}
@@ -217,11 +207,15 @@ class Training extends Component {
               changeDetailsTraining={this.props.changeDetailsTraining}
             />
             <button onClick={this.downloadPDF}>Generate PDF</button>
-              {this.state.link && <DownloadLinkPopUp link={this.state.link}
-                                                     closePopUp={this.closePopUp}/>}
+            {this.state.downloadLinkPopUp && (
+              <DownloadLinkPopUp
+                link={this.state.link}
+                closePopUp={this.closePopUp}
+              />
+            )}
           </Grid.Column>
         </DragDropContext>
-      )
+      );
     }
   }
 }
@@ -236,22 +230,27 @@ const mapStateToProps = state => ({
   currentDropdownTraining: state.currentDropdownTraining,
   isDetailTraining: state.isDetailTraining,
   detailTrainings: state.trainings,
-  link:state.link
+  link: state.link
 });
 
 const mapDispatchToProps = dispatch => ({
   addExercise: (items, tranings, requestedId) =>
     dispatch(addExercise(items, tranings, requestedId)),
-  saveTraining: (items, currentTraningExercises) => dispatch(saveTraining(items, currentTraningExercises)),
-  saveItems: (items) => dispatch(saveItems(items)),
-  loadExercises: (currentId) => dispatch(loadExercises(currentId)),
-  createTrainingOption: (traningOption) => dispatch(createTrainingOption(traningOption)),
-  saveCurrentDropdownTraining: (currentDropdownTraining) => dispatch(saveCurrentDropdownTraining(currentDropdownTraining)),
-  customizeTraining: (currentDropdownTraining, currentTraningExercises) => dispatch(customizeTraining(currentDropdownTraining, currentTraningExercises)),
-  getPDF:(data) => dispatch(getPDF(data)),
-  changeDetailsTraining: (details)=>dispatch(changeDetailsTraining(details))
+  saveTraining: (items, currentTraningExercises) =>
+    dispatch(saveTraining(items, currentTraningExercises)),
+  saveItems: items => dispatch(saveItems(items)),
+  loadExercises: currentId => dispatch(loadExercises(currentId)),
+  createTrainingOption: traningOption =>
+    dispatch(createTrainingOption(traningOption)),
+  saveCurrentDropdownTraining: currentDropdownTraining =>
+    dispatch(saveCurrentDropdownTraining(currentDropdownTraining)),
+  customizeTraining: (currentDropdownTraining, currentTraningExercises) =>
+    dispatch(
+      customizeTraining(currentDropdownTraining, currentTraningExercises)
+    ),
+  getPDF: data => dispatch(getPDF(data)),
+  changeDetailsTraining: details => dispatch(changeDetailsTraining(details))
 });
-
 
 Training.propTypes = {
   currentItems: PropTypes.array,
@@ -261,7 +260,9 @@ Training.propTypes = {
   lastRequestedId: PropTypes.number,
   trainingOptions: PropTypes.array,
   currentDropdownTraining: PropTypes.string
-
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Training);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Training);
