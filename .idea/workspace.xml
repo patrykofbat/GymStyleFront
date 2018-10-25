@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dbaf124e-754e-4c35-af40-39ccdf4f6840" name="Default" comment="add spinner when loading exercises">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="dbaf124e-754e-4c35-af40-39ccdf4f6840" name="Default" comment="api registration message" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -51,58 +49,97 @@
     <session id="790355588">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="12" />
-          <entry key="jsx" value="445" />
-          <entry key="sass" value="688" />
-          <entry key="txt" value="36" />
+          <entry key="js" value="61" />
+          <entry key="jsx" value="904" />
+          <entry key="sass" value="692" />
+          <entry key="txt" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSX Harmony" value="445" />
-          <entry key="JavaScript" value="12" />
-          <entry key="PLAIN_TEXT" value="36" />
-          <entry key="Sass" value="688" />
+          <entry key="JSX Harmony" value="904" />
+          <entry key="JavaScript" value="61" />
+          <entry key="PLAIN_TEXT" value="64" />
+          <entry key="Sass" value="692" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="jsx" value="8" />
-          <entry key="sass" value="7" />
+          <entry key="js" value="1" />
+          <entry key="jsx" value="10" />
+          <entry key="sass" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSX Harmony" value="8" />
+          <entry key="JSX Harmony" value="10" />
+          <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Sass" value="7" />
+          <entry key="Sass" value="10" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="GymStyleFront" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/startPage/StartPage.jsx">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/style/MessageApiPopUp.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="420">
+              <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.sass">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/messages/MessageApiPopUp.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/registrationPage/RegistrationPage.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -126,9 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/pages/LoginPage/LoginPage.jsx" />
-        <option value="$PROJECT_DIR$/src/utilis/components/pages/StartPage/StartPage.jsx" />
-        <option value="$PROJECT_DIR$/src/utilis/components/common/MyButton.jsx" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/utilis/components/pages/RegistrationPage/RegistrationPage.jsx" />
         <option value="$PROJECT_DIR$/src/utilis/reducers/userReducer.js" />
@@ -167,16 +201,19 @@
         <option value="$PROJECT_DIR$/src/pages/LoginPage.jsx" />
         <option value="$PROJECT_DIR$/src/style/pages/RegistrationPage.sass" />
         <option value="$PROJECT_DIR$/src/style/pages/LoginPage.sass" />
-        <option value="$PROJECT_DIR$/src/api.js" />
         <option value="$PROJECT_DIR$/src/pages/dashboard/training/ExerciseSelection.jsx" />
         <option value="$PROJECT_DIR$/src/style/Spinner.sass" />
         <option value="$PROJECT_DIR$/src/components/common/Spinner.jsx" />
         <option value="$PROJECT_DIR$/src/pages/dashboard/training/Training.jsx" />
-        <option value="$PROJECT_DIR$/src/index.sass" />
         <option value="$PROJECT_DIR$/src/style/TrainingSelection.sass" />
         <option value="$PROJECT_DIR$/src/pages/dashboard/training/TrainingSelection.jsx" />
         <option value="$PROJECT_DIR$/src/components/common/InputPopUp.jsx" />
         <option value="$PROJECT_DIR$/src/style/InputPopUp.sass" />
+        <option value="$PROJECT_DIR$/src/style/MessageApiPopUp.sass" />
+        <option value="$PROJECT_DIR$/src/index.sass" />
+        <option value="$PROJECT_DIR$/src/components/messages/MessageApiPopUp.jsx" />
+        <option value="$PROJECT_DIR$/src/api.js" />
+        <option value="$PROJECT_DIR$/src/pages/registrationPage/RegistrationPage.jsx" />
       </list>
     </option>
   </component>
@@ -259,6 +296,13 @@
               <item name="GymStyleFront" type="b2602c69:ProjectViewProjectNode" />
               <item name="GymStyleFront" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="messages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GymStyleFront" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GymStyleFront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -266,7 +310,7 @@
               <item name="GymStyleFront" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="startPage" type="462c0819:PsiDirectoryNode" />
+              <item name="registrationPage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GymStyleFront" type="b2602c69:ProjectViewProjectNode" />
@@ -458,6 +502,7 @@
       <workItem from="1539693525466" duration="102000" />
       <workItem from="1539695271436" duration="44000" />
       <workItem from="1539950576573" duration="19000" />
+      <workItem from="1540414261692" duration="4974000" />
     </task>
     <task id="LOCAL-00001" summary="add logo, change view of login, button disable">
       <created>1519127524508</created>
@@ -578,19 +623,26 @@
       <option name="project" value="LOCAL" />
       <updated>1539544738271</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="api registration message">
+      <created>1540418736136</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1540418736137</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227159000" />
+    <option name="totallyTimeSpent" value="232133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1050" height="1682" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48556876" visible="true" weight="0.16260955" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49226806" visible="true" weight="0.27458617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.51443124" side_tool="true" weight="0.20808202" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Favorites" order="3" sideWeight="0.507732" side_tool="true" weight="0.345667" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.14037433" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49074975" weight="0.28737113" />
@@ -598,7 +650,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5092502" side_tool="true" visible="true" weight="0.48131442" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5092502" side_tool="true" weight="0.16752577" />
       <window_info anchor="bottom" id="Messages" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32921347" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49853945" weight="0.33655083" />
@@ -632,12 +684,10 @@
     <MESSAGE value="card style" />
     <MESSAGE value="embeded youtube video for popup" />
     <MESSAGE value="add spinner when loading exercises" />
-    <option name="LAST_COMMIT_MESSAGE" value="add spinner when loading exercises" />
+    <MESSAGE value="api registration message" />
+    <option name="LAST_COMMIT_MESSAGE" value="api registration message" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package-lock.json" />
-    <entry file="file://$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.production.min.js" />
-    <entry file="file://$PROJECT_DIR$/src/style/components/forms/RegistrationForm.sass" />
     <entry file="file://$PROJECT_DIR$/src/utilis/actions/userActions.js" />
     <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -714,16 +764,6 @@
           <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/registrationPage/RegistrationPage.jsx">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/registrationPage/RegistrationForm.jsx">
       <provider selected="true" editor-type-id="text-editor" />
@@ -820,13 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/startPage/StartPage.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -834,6 +867,48 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/DownloadLinkPopUp.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/MessageApiPopUp.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/messages/MessageApiPopUp.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/registrationPage/RegistrationPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
