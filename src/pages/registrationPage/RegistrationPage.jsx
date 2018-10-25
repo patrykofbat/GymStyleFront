@@ -13,33 +13,33 @@ class RegistrationPage extends Component {
 
   handleData = data => {
     console.log("debug");
-    api.user.signUp(data).then(response =>{
+    api.user.signUp(data).then(response => {
       this.setState({
-          isLoading: false,
-          message: response.data.message
-      })
+        isLoading: false,
+        message: response.data.message
+      });
     });
 
-
     this.setState({
-        popUp: true,
-        isLoading:true
+      popUp: true,
+      isLoading: true
     });
   };
 
-  closePopUp = ()=>{
-    this.setState({popUp: false})
+  closePopUp = () => {
+    this.setState({ popUp: false });
   };
 
   render() {
-    const {popUp, isLoading, message} = this.state;
+    const { popUp, isLoading, message } = this.state;
     return (
       <div className="registration-container">
         <RegistrationForm onSubmit={this.handleData} />
-          {popUp && <MessageApiPopUp  closePopUp={this.closePopUp}>
-              {isLoading && <Spinner/>}
-              {!isLoading && <h2>{message}</h2>}
-          </MessageApiPopUp>}
+        {popUp && (
+          <MessageApiPopUp closePopUp={this.closePopUp}>
+            {isLoading ? <Spinner /> : <h2>{message}</h2>}
+          </MessageApiPopUp>
+        )}
       </div>
     );
   }
