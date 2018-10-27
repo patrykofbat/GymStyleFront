@@ -8,6 +8,7 @@ class LoginPage extends Component {
 
     handleData = (data) => {
         api.user.signIn(data);
+        this.props.history.push("/dashboard");
     };
 
     render() {
