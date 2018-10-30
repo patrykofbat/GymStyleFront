@@ -1,33 +1,36 @@
 import axios from "axios";
+import config from "./config";
 
 export default {
   user: {
     signUp: data =>
       axios({
         method: "post",
-        url: "http://localhost:8081/registration",
+        url: config.host + "/registration",
         data,
         headers: { "Content-Type": "application/json" }
       }),
 
-    signIn: data => {
-      let url = "http://localhost:8081/login";
+    signIn: data =>
       axios({
         method: "post",
-        url,
+        url: config.host + "/login",
         data,
         headers: { "Content-Type": "application/json" }
-      }).then(response => console.log(response));
-    }
+      })
   },
 
   training: {
-    getExercises: selectedOption => {
-      let url = "http://localhost:8081/exercises/" + selectedOption;
-      return axios.get(url);
-    },
+    getExercises: selectedOption =>
+      axios({
+        method: "get",
+        url: config.host + "/exercises/" + selectedOption,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+      }),
     getPDF: data => {
-      let url = "http://localhost:8081/PDF";
+      let url = config.host + "/PDF";
       return axios({
         method: "post",
         url: url,

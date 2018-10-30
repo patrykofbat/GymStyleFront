@@ -14,10 +14,11 @@ class App extends Component {
           exact
           render={props => <StartPage {...this.props} {...props} />}
         />
-        <Route 
-          path="/login" 
-          exact 
-          render={props => <LoginPage {...this.props} {...props} />} />
+        <Route
+          path="/login"
+          exact
+          render={props => <LoginPage {...this.props} {...props} />}
+        />
         <Route
           path="/registration"
           exact

@@ -1,6 +1,5 @@
 import _ from "lodash";
 
-
 const initialState = {
   allItems: [],
   currentItems: [],
@@ -10,10 +9,9 @@ const initialState = {
   requestedIds: [],
   lastRequestedId: 0,
   currentDropdownTraining: "",
-  link:"",
+  link: "",
   isDetailTraining: false
 };
-
 
 const trainingReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -25,12 +23,18 @@ const trainingReducer = (state = initialState, action) => {
       };
 
     case "SAVE_ITEMS":
-
       return {
         ...state,
         currentItems: action.payload.items
       };
 
+    case "CHANGE_LOCATION":
+      localStorage.clear();
+
+      return {
+        ...state,
+        location: action.payload.location
+      };
 
     case "LOAD_ITEMS":
       let newRequestedIds = [...state.requestedIds];
@@ -38,7 +42,7 @@ const trainingReducer = (state = initialState, action) => {
 
       if (_.indexOf(newRequestedIds, action.payload.items[0].id) === -1) {
         newItems = newItems.concat(action.payload.items);
-        newRequestedIds.push(action.payload.items[0].id)
+        newRequestedIds.push(action.payload.items[0].id);
       }
 
       return {
@@ -66,11 +70,9 @@ const trainingReducer = (state = initialState, action) => {
         ...state,
         trainings: newTrainings,
         isDetailTraining: action.payload.isDetailTraining
-
       };
 
     case "SAVE_CURRENT_TRAINING":
-
       return {
         ...state,
         currentDropdownTraining: action.payload.currentDropdownTraining
@@ -78,35 +80,31 @@ const trainingReducer = (state = initialState, action) => {
 
     case "DOWNLOAD_PDF":
       return {
-          ...state,
-          link: action.payload.link
+        ...state,
+        link: action.payload.link
       };
 
     case "CHANGE_DETAILS_TRAINING":
       let newDetailTrainings = [...state.trainings];
 
-
-        return {
-          ...state,
-          trainings: newDetailTrainings.map((item)=>{
-            return {
-              ...item,
-              exercises:item.exercises.map((exercise, index) => {
-                return{
-                  ...exercise,
-                  ...action.payload.details[index]
-                }
-              })
-            }
-          })
-
-        }
-
+      return {
+        ...state,
+        trainings: newDetailTrainings.map(item => {
+          return {
+            ...item,
+            exercises: item.exercises.map((exercise, index) => {
+              return {
+                ...exercise,
+                ...action.payload.details[index]
+              };
+            })
+          };
+        })
+      };
 
     default:
       return state;
   }
 };
-
 
 export default trainingReducer;

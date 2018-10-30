@@ -7,8 +7,13 @@ import api from "../../api";
 class LoginPage extends Component {
 
     handleData = (data) => {
-        api.user.signIn(data);
-        this.props.history.push("/dashboard");
+        api.user.signIn(data)
+        .then(response => {
+            localStorage.setItem("token", response.data.token) 
+            this.props.history.push("/dashboard");
+        })
+        .catch(error => console.log(error));
+        
     };
 
     render() {
